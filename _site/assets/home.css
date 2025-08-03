@@ -11,6 +11,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Wrapper to fill full viewport */
@@ -19,8 +20,15 @@ body {
   flex-direction: column;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #000000 20%,
+    #c0c0c0 100%
+  );
 }
 
+/*HEADER*/
 /* Layout Content */
 .main-content {
   flex: 1;
@@ -31,91 +39,230 @@ body {
 }
 
 /* Common Layout Containers */
-header.main-header,
-.buttons-section,
-.technologies-section,
-.languages,
-.site-footer {
+
+header.main-header {
   width: 100%;
   margin: 0 auto 2.5rem;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;     
   box-sizing: border-box;
+
+  background-color: #000000; 
+  color: #ffffff;            /* white text */
+  
+  /* Optional: add some subtle shadow or border if you want separation */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 
-/* Buttons - Apple style */
+header.main-header * {
+  color: inherit; /* inherit white color */
+}
+
+/* counters */
+.counter-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(to right, #000, #222, #444, #222, #000);
+  border-radius: 20px;
+  max-width: 800px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.counter-box {
+  background: #555);
+  border-radius: 16px;
+  padding: 2rem;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.counter-box:hover {
+  transform: translateY(-6px);
+  color: #007aff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.counter-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.counter-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+  letter-spacing: -0.02em;
+}
+
+
+/*education*/
+.education-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #000, #222, #444, #222, #000);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.university-card {
+  display: flex;
+  flex-direction: column; /* stack logo on top, info below */
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.university-card:hover{
+  color: #007aff;            
+  transform: translateY(-6px);
+  box-shadow: inset 0 -3px 10px rgba(0,0,0,0.12),
+              0 20px 35px rgba(0, 122, 255, 0.4);
+  outline: none;
+}
+
+.university-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: white;
+}
+
+.university-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.university-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.university-description {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
+}
+
+
+
+/* BUTTONS */
 .buttons-section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;        
   margin-top: 2rem;
+  padding: 3rem 1.5rem; /* vertical padding to give space for gradient */
+  
+  /* Vertical gradient background: black (top) to silver (bottom) */
+  background: linear-gradient(180deg, #000000 0%, #c0c0c0 100%);
+  
+  border-radius: 20px;  
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+
 
 .buttons-section a {
   display: inline-block;
-  padding: 1rem 2.75rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: white;
-  background-color: #007aff;
+  padding: 3rem 8rem;   
+  font-size: 1.6rem;      
+  font-weight: 700;
+  color: black;
+  
+
+  background-color: #fff;
   border-radius: 36px;
+  
+
+  box-shadow: inset 0 -3px 8px rgba(0,0,0,0.1), 
+              0 10px 20px rgba(0, 0, 0, 0.1);   
+  
   text-decoration: none;
-  box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  
+  transition: 
+    background-color 0.3s ease, 
+    transform 0.2s ease, 
+    box-shadow 0.3s ease, 
+    color 0.3s ease;
+  
   user-select: none;
+  cursor: pointer;
 }
+
 
 .buttons-section a:hover,
 .buttons-section a:focus-visible {
-  background-color: #005ecb;
-  box-shadow: 0 14px 28px rgba(0, 94, 203, 0.4);
-  transform: translateY(-2px);
+  background-color: #f0f0f5;
+  color: #007aff;            
+  
+  /* jump up */
+  transform: translateY(-6px);
+  
+  /* stronger shadow on hover */
+  box-shadow: inset 0 -3px 10px rgba(0,0,0,0.12),
+              0 20px 35px rgba(0, 122, 255, 0.4);
+  
   outline: none;
 }
 
-/*technologies section and languages sections*/
-.technologies-section,
-.languages {
-  overflow-x: visible; /* no scrolling on section */
-  padding: 2.5rem 0;
+
+.buttons-section a:focus-visible {
+  outline: 3px solid #007aff;
+  outline-offset: 4px;
 }
 
-/* Scroll wrapper handles horizontal scroll */
+
+
+/*SHARED WRAPPER*/
 .scroll-wrapper {
-  overflow-x: auto;
-  white-space: nowrap;
-  scrollbar-width: thin;
+  overflow-x: auto; 
+  padding-inline: calc((100vw - 70vw) / 2);
   -webkit-overflow-scrolling: touch;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  max-width: 1200px;
+  scroll-behavior: smooth;
+  scroll-padding-left: 1.5rem;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
-/* The ul inside scroll wrapper stays flex as before */
-.scroll-wrapper ul {
-  display: flex;
-  gap: 2rem;
-  padding: 1rem 0;
-  margin: 0;
-  list-style: none;
-  white-space: nowrap;
-}
-/* Scrollable Horizontal Lists */
+/* SHARED SECTION STYLES*/
 .technologies-section,
 .languages {
   padding: 2.5rem 0;
-  background-color: #e5e5ea;
+  background-color: #c0c0c0;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow-x: auto;
   white-space: nowrap;
   width: 100%;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #c0c0c0 transparent;
-  -ms-overflow-style: none; /* IE and Edge */
 }
 
+/* Scrollbar Styling */
 .technologies-section::-webkit-scrollbar,
 .languages::-webkit-scrollbar {
   height: 8px;
@@ -127,6 +274,7 @@ header.main-header,
   border-radius: 4px;
 }
 
+/* Section Headers */
 .technologies-section h2,
 .languages h2 {
   text-align: center;
@@ -138,22 +286,23 @@ header.main-header,
   user-select: none;
 }
 
-/* Icon Lists */
+
+/* Icon List Container */
 .technologies-section ul,
 .languages ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;;
   gap: 2rem;
-  padding: 1rem 0;
   margin: 0;
+  padding: 1rem 0; /* only vertical padding here */
   list-style: none;
-  white-space: nowrap;
-  overflow-x: auto;
-  scrollbar-width: thin;
+  white-space: nowrap; /* DO NOT use 'wrap' */
+  flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 
+/* Individual Items */
 .technologies-section li,
 .languages li {
   display: inline-flex;
@@ -162,30 +311,50 @@ header.main-header,
   justify-content: center;
   font-size: 1rem;
   font-weight: 600;
+  background-color: #ffffff;
   color: #333;
   min-width: 90px;
   text-align: center;
   flex-shrink: 0;
   user-select: none;
-  transition: color 0.3s ease;
   cursor: default;
+  padding: 0.5rem;
+  border-radius: 12px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Hover/Interaction Effects */
 .technologies-section li:hover,
 .languages li:hover {
   color: #007aff;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 14px rgba(0, 122, 255, 0.2);
 }
 
+.technologies-section li:active,
+.languages li:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+
+/* Icon Images */
 .technologies-section img,
 .languages img {
   width: 48px;
   height: 48px;
   margin-bottom: 0.6rem;
   object-fit: contain;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
 }
 
-/* Footer */
+
+/* FOOTER */
 .site-footer {
   position: relative;
   padding: 5rem 2rem 3rem; /* more bottom padding for full icon visibility */
@@ -197,7 +366,7 @@ header.main-header,
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 16px 16px 0 0;
+  border-radius: 0px 0px 0 0;
   box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
 }
 
@@ -257,5 +426,5 @@ header.main-header,
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: url('data:image/svg+xml;utf8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.107-.775.418-1.305.76-1.605-2.665-.3-5.466-1.335-5.466-5.931 0-1.31.468-2.38 1.236-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.008
+  background: url('data:image/svg+xml;utf8,<svg fill="%230e76a8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.107-.775.418-1.305.76-1.605-2.665-.3-5.466-1.335-5.466-5.931 0-1.31.468-2.38 1.236-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.008
 
