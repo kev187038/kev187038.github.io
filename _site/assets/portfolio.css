@@ -1,0 +1,266 @@
+/*BODY*/ 
+html, body { /*same style as home*/
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f5f5f7;
+  color: #1c1c1e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #000000 20%,
+    #c0c0c0 100%
+  );
+}
+
+/*PORTFOLIO*/
+.portfolio-section {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(to bottom, #000000, #c0c0);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-header h2 {
+  font-size: 2.2rem;
+  margin: 0.5rem 0;
+}
+
+.portfolio-header p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.back-button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.portfolio-category {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-category h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.portfolio-category p {
+  font-size: 1rem;
+  color: #d0d0d0;
+}
+
+@media (min-width: 768px) {
+  .portfolio-categories {
+    flex-direction: row;
+  }
+
+  .portfolio-category {
+    flex: 1;
+  }
+}
+
+/*Portfolio icons*/
+.portfolio-header .section-icon {
+  width: 5.5rem;
+  height: 5.5rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+
+.portfolio-category h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-icon {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+
+/*PORTFOLIO PROJECTS */
+.project-item {
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover{
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0, 122, 255, 0.2);
+}
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1c1c1e;
+  font-size: 1.05rem;
+  user-select: none;
+}
+
+.project-title {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+}
+
+.project-title:hover {
+  text-decoration: underline;
+  color: #007aff;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.project-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.project-description.expanded {
+  max-height: 50%;
+  padding: 1rem;
+}
+
+
+
+/* FOOTER */
+.site-footer {
+  position: relative;
+  padding: 5rem 2rem 3rem; 
+  background: linear-gradient(180deg, #0555 0%, #000 100%);
+  color: white;
+  text-align: center;
+  overflow: visible;
+  margin-top: auto;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0px 0px 0 0;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
+}
+
+/* Wave SVG at top */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80"><defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="%23555"/><stop offset="100%" stop-color="%23000"/></linearGradient></defs><path fill="url(%23grad)" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>') no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Footer links */
+.site-footer a {
+  position: relative;
+  padding-left: 28px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0 1rem;
+  vertical-align: middle;
+  line-height: 1.2;
+  user-select: text;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* LinkedIn icon */
+.site-footer a[href*="linkedin.com"]::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="%230e76a8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.983 3.5c0 1.381-1.114 2.5-2.483 2.5S0 4.881 0 3.5 1.114 1 2.5 1 4.983 2.119 4.983 3.5zM0 8h5v16H0V8zm7 0h4.6v2.234h.064c.64-1.207 2.2-2.48 4.536-2.48 4.853 0 5.75 3.193 5.75 7.34V24h-5v-7.448c0-1.776-.032-4.065-2.478-4.065-2.478 0-2.855 1.933-2.855 3.933V24H7V8z"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
+/* GitHub icon */
+.site-footer a[href*="github.com"]::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="%230e76a8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.107-.775.418-1.305.76-1.605-2.665-.3-5.466-1.335-5.466-5.931 0-1.31.468-2.38 1.236-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.008
+
+
+/*MOBILE*/
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
