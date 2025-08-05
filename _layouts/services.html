@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Gabriele Matini</title>
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="/assets/services.css">
+  <title>{{ page.title | default: "Gabriele Matini" }}</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/services.css' | relative_url }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
