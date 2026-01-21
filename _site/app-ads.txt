@@ -1,0 +1,1 @@
+I authorize Google AdMob to show ads in my app.
