@@ -94,16 +94,10 @@ body {
 @media (min-width: 768px) {
   .portfolio-categories {
     flex-direction: row;
-    flex-wrap: wrap;
   }
 
   .portfolio-category {
     flex: 1;
-  }
-
-  /* Clients section takes full width on its own row; project categories sit below */
-  .clients-section {
-    flex: 0 0 100%;
   }
 }
 
@@ -187,10 +181,10 @@ body {
   padding: 1rem;
 }
 
-/* CLIENTS I HELPED */
+/* CLIENTS I HELPED - full width, always above project categories */
 .clients-section {
-  flex: 1 1 100%;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .clients-grid {
