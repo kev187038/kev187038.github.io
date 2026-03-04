@@ -181,7 +181,71 @@ body {
   padding: 1rem;
 }
 
+/* CLIENTS I HELPED */
+.clients-section {
+  flex: 1 1 100%;
+  width: 100%;
+}
 
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.client-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.client-name {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+}
+
+.client-name a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.client-name a:hover {
+  color: #64b5f6;
+  border-bottom-color: #64b5f6;
+}
+
+.client-description {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  line-height: 1.6;
+}
+
+.client-description p {
+  margin: 0;
+  color: inherit;
+}
+
+.client-description strong {
+  color: #e8e8e8;
+}
+
+@media (max-width: 768px) {
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* FOOTER */
 .site-footer {
