@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: "Terms and Conditions" }} | Gabriele Matini</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/legal.css' | relative_url }}">
+</head>
+<body class="legal-document-body">
+
+<section class="legal-document-section">
+  <header class="legal-document-header">
+    <button type="button" class="back-button legal-back-button" onclick="window.location.href='{{ '/' | relative_url }}'">← Back to Home</button>
+  </header>
+  <article class="legal-document-content">
+    {{ content }}
+  </article>
+</section>
+
+<footer class="site-footer legal-site-footer">
+  <p>Let's connect! Contact me at:</p>
+  <p>
+    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256">LinkedIn</a> |
+    <a href="https://github.com/kev187038">GitHub</a> |
+    <a href="mailto:gabriele.matini@gmail.com">Email</a>
+  </p>
+</footer>
+
+</body>
+</html>
