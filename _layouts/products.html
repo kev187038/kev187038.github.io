@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ page.title | default: "Products" }} | Gabriele Matini</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/products.css' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="products-page">
+
+<header class="products-header">
+  <button type="button" class="back-button" onclick="window.location.href='{{ '/' | relative_url }}'">← Back to Home</button>
+  <h1>Products</h1>
+  <p>Software you can run on your own machine. Clear pricing and terms before you buy.</p>
+</header>
+
+<main class="products-grid">
+  <article class="product-card">
+    <div class="product-card-visual">
+      <img src="{{ '/assets/product-icons/GrassHopper.jpeg' | relative_url }}" alt="GrassHopper product" width="280" height="280" />
+    </div>
+    <div class="product-card-body">
+      <h2>GrassHopper</h2>
+      <p class="product-price">$24.99</p>
+      <p class="product-description">
+        An agentic AI pipeline built to streamline job search and applications. It automatically matches and ranks job posts against your background so you can focus on the best-fit opportunities.
+      </p>
+      <div class="product-actions">
+        <a class="product-btn-primary" href="{{ '/GrassHopper-terms-and-conditions/' | relative_url }}">Terms of service</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="products-footer">
+  <p>Let's connect! Contact me at:</p>
+  <p>
+    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256">LinkedIn</a>
+    <a href="https://github.com/kev187038">GitHub</a>
+    <a href="mailto:gabriele.matini@gmail.com">Email</a>
+  </p>
+</footer>
+
+</body>
+</html>
