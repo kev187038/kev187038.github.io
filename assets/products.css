@@ -87,8 +87,7 @@
   aspect-ratio: auto;
   border-radius: 10px;
   object-fit: cover;
-  display: block;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  display: inline flow-root;
 }
 
 @media (min-width: 640px) {
