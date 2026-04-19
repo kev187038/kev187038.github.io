@@ -253,6 +253,7 @@ header.main-header * {
   border-radius: 12px;
   cursor: pointer;
   font-family: inherit;
+  color: #000000;
   border: none;
   transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
