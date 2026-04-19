@@ -203,7 +203,10 @@ body {
 /* Layout Content */
 .main-content {
   flex: 1;
-  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2.5rem 2.5rem;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
