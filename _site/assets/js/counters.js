@@ -9,5 +9,5 @@ document.addEventListener("DOMContentLoaded", () => {
 fetch("https://api.github.com/users/kev187038")
   .then((response) => response.json())
   .then((data) => {
-    document.getElementById("repo-count").textContent = data.public_repos;
+    document.getElementById("repo-count").textContent = data.public_repos + 2;
   });

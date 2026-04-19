@@ -10,19 +10,13 @@
 </head>
 <body>
 <header class="main-header" style="text-align: center;">
-  <h1>Gabriele Matini &#x1F60E;</h1>
+  <h1 id="the-truest-equality">Gabriele Matini === Build Robust, Ship Fast! &#x1F60E;</h1>
   <p>
-    Hello there! I'm Gabriele, a Junior Software and ML engineer with a passion for solving complex tasks and Full-Stack development! I offer my services, prioritizing quality and speed of delivery over everything!
+    Hello and welcome to my website! I'm Gabriele, an ML Engineer with a passion for solving complex tasks and deploying rapid solutions! I offer my services, prioritizing quality and speed of delivery over everything!
   </p>
   
-<section class="education-section">
-  <a href="https://www.uniroma1.it" class="university-card" target="_blank" rel="noopener noreferrer">
-    <img src="/assets/icons/sapienza-icon.png" alt="Sapienza University of Rome" class="university-logo" />
-    <div class="university-info">
-      <h3 class="university-name">Sapienza University of Rome</h3>
-      <p class="university-description">Master's Engineering in Computer Science, class of 2025</p>
-    </div>
-  </a>
+<section class="contact-cta-section">
+  <button type="button" class="get-in-touch-btn" id="contact-open-btn" aria-haspopup="dialog">Get in Touch</button>
 </section>
   
   <section class="counter-section">
@@ -53,6 +47,7 @@
 <section class="buttons-section">
   <a href="/portfolio" class="portfolio">Portfolio</a>
   <a href="/services" class="services">Services</a>
+  <a href="/products" class="products">Products</a>
 </section>
 
 <section class="languages">
@@ -64,10 +59,8 @@
     <li><img src="https://cdn.simpleicons.org/c/00599C" alt="C Icon">C/C++</li>
     <li><img src="https://cdn.simpleicons.org/ruby/CC342D" alt="Ruby Icon">Ruby</li>
     <li><img src="https://cdn.simpleicons.org/assemblyscript/808080" alt="Assembly Icon">Assembly</li>
-    <li><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML Icon">HTML</li>
-    <li><img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS Icon">CSS</li>
     <li><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Icon">JavaScript</li>
-    <li><img src="https://cdn.simpleicons.org/scala/DC322F" alt="Scala Icon">Scala</li>
+    <li><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript Icon">TypeScript</li>
   </ul>
   </div>
 </section>
@@ -79,7 +72,9 @@
   <ul class="technology-list">
     <li><img src="https://cdn.simpleicons.org/rubyonrails" alt="Rails" />Rails</li>
     <li><img src="https://cdn.simpleicons.org/springboot" alt="SpringBoot" />SpringBoot</li>
-    <li><img src="https://cdn.simpleicons.org/flask" alt="Flask" />Flask</li>
+    <li><img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" />FastAPI</li>
+    <li><img src="https://cdn.simpleicons.org/sqlalchemy/D71F00" alt="SQLAlchemy" />SQLAlchemy</li>
+    <li><img src="https://cdn.simpleicons.org/pydantic/E92063" alt="Pydantic" />Pydantic</li>
     <li><img src="https://cdn.simpleicons.org/apachemaven" alt="Maven" />Maven</li>
     <li><img src="https://cdn.simpleicons.org/git" alt="Git" />Git</li>
     <li><img src="https://cdn.simpleicons.org/jenkins" alt="Jenkins" />Jenkins</li>
@@ -102,6 +97,11 @@
     <li><img src="https://cdn.simpleicons.org/logstash" alt="LogStash" />LogStash</li>
     <li><img src="https://cdn.simpleicons.org/kibana" alt="Kibana" />Kibana</li>
     <li><img src="https://cdn.simpleicons.org/react" alt="React" />React</li>
+    <li><img src="https://cdn.simpleicons.org/railway/0B0D0E" alt="Railway" />Railway</li>
+    <li><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" />Supabase</li>
+    <li><img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />Vercel</li>
+    <li><img src="https://cdn.simpleicons.org/box/000000" alt="Hatchet" />Hatchet</li>
+    <li><img src="https://cdn.simpleicons.org/box/000000" alt="ZenML" />ZenML</li>
     <li style="min-width: 64px; pointer-events: none; opacity: 0;"></li>
   </ul>
   </div>
@@ -131,7 +131,29 @@
   </p>
 </footer>
 
+<dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title">
+  <button type="button" class="contact-dialog-close" id="contact-close-btn" aria-label="Close dialog">&times;</button>
+  <form method="post" action="https://formsubmit.co/xperimentdev@gmail.com" class="contact-form">
+    <h2 id="contact-dialog-title">Get in Touch</h2>
+    <p class="contact-dialog-lead">Send a message and I will reply by email.</p>
+    <label for="contact-email">Your email</label>
+    <input id="contact-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+    <label for="contact-subject">Subject</label>
+    <input id="contact-subject" type="text" name="_subject" required autocomplete="off" placeholder="What is this about?" />
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" rows="5" required placeholder="Your message…"></textarea>
+    <input type="hidden" name="_next" value="http://localhost:4000/" />
+    <input type="hidden" name="_captcha" value="false" />
+    <div class="contact-form-actions">
+      <button type="button" class="contact-btn contact-btn-secondary" id="contact-cancel-btn">Cancel</button>
+      <button type="submit" class="contact-btn contact-btn-primary">Send</button>
+    </div>
+  </form>
+</dialog>
+
 <script src="/assets/js/counters.js"></script>
+<script src="/assets/js/contact-dialog.js"></script>
+<script src="/assets/js/the-truest-equality.js"></script>
 </body>
 </html>
 
