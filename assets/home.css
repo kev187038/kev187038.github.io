@@ -38,6 +38,12 @@ html, body {
   animation: equality-terminal-fade-in 0.25s ease;
 }
 
+.terminal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+
 @keyframes equality-terminal-fade-in {
   from {
     opacity: 0;
@@ -206,7 +212,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  padding: 2.5rem 2.5rem;
+  padding: 1rem 2.5rem;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;

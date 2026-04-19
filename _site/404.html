@@ -43,7 +43,7 @@
   </div>
 </header>
 
-<main class="main-content">
+<main class="main-content" id="main-content">
 <section class="buttons-section">
   <a href="/portfolio" class="portfolio">Portfolio</a>
   <a href="/services" class="services">Services</a>
@@ -54,13 +54,13 @@
   <h2>Languages I Code In</h2>
   <div class="scroll-wrapper">
   <ul class="language-list">
-    <li><img src="assets/icons/java-icon.png" alt="Java Icon">Java</li>
-    <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python Icon">Python</li>
-    <li><img src="https://cdn.simpleicons.org/c/00599C" alt="C Icon">C/C++</li>
-    <li><img src="https://cdn.simpleicons.org/ruby/CC342D" alt="Ruby Icon">Ruby</li>
-    <li><img src="https://cdn.simpleicons.org/assemblyscript/808080" alt="Assembly Icon">Assembly</li>
-    <li><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Icon">JavaScript</li>
-    <li><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript Icon">TypeScript</li>
+    <li onclick="JavaHelloWorld(this)"><img src="assets/icons/java-icon.png" alt="Java Icon">Java</li>
+    <li onclick="PythonHelloWorld(this)"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python Icon">Python</li>
+    <li onclick="CHelloWorld(this)"><img src="https://cdn.simpleicons.org/c/00599C" alt="C Icon">C/C++</li>
+    <li onclick="RubyHelloWorld(this)"><img src="https://cdn.simpleicons.org/ruby/CC342D" alt="Ruby Icon">Ruby</li>
+    <li onclick="AssemblyHelloWorld(this)"><img src="https://cdn.simpleicons.org/assemblyscript/808080" alt="Assembly Icon">Assembly</li>
+    <li onclick="JavaScriptHelloWorld(this)"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Icon">JavaScript</li>
+    <li onclick="TypeScriptHelloWorld(this)"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript Icon">TypeScript</li>
   </ul>
   </div>
 </section>
@@ -70,18 +70,23 @@
   <h2>Technologies I Use</h2>
   <div class="scroll-wrapper">
   <ul class="technology-list">
-    <li><img src="https://cdn.simpleicons.org/rubyonrails" alt="Rails" />Rails</li>
+    <li><img src="https://cdn.simpleicons.org/railway/0B0D0E" alt="Railway" />Railway</li>
+    <li><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js"> Next.js</li>    
     <li><img src="https://cdn.simpleicons.org/springboot" alt="SpringBoot" />SpringBoot</li>
     <li><img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" />FastAPI</li>
+    <li><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" />Supabase</li>
+    <li><img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />Vercel</li>
     <li><img src="https://cdn.simpleicons.org/sqlalchemy/D71F00" alt="SQLAlchemy" />SQLAlchemy</li>
     <li><img src="https://cdn.simpleicons.org/pydantic/E92063" alt="Pydantic" />Pydantic</li>
+    <li><img src="https://img.icons8.com/ios-filled/50/hatchet.png" alt="Hatchet" />Hatchet</li>
+    <li><img src="https://cdn.simpleicons.org/rabbitmq" alt="RabbitMQ" />RabbitMQ</li>
     <li><img src="https://cdn.simpleicons.org/apachemaven" alt="Maven" />Maven</li>
     <li><img src="https://cdn.simpleicons.org/git" alt="Git" />Git</li>
     <li><img src="https://cdn.simpleicons.org/jenkins" alt="Jenkins" />Jenkins</li>
     <li><img src="https://cdn.simpleicons.org/docker" alt="Docker" />Docker</li>
     <li><img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes" />Kubernetes</li>
-    <li><img src="https://cdn.simpleicons.org/pytorch" alt="AI & ML" />AI & ML</li>
-    <li><img src="assets/icons/flower-icon.png" alt="Federated Learning" />Federated Learning</li>
+    <li><img src="https://cdn.simpleicons.org/pytorch" alt="Pytorch" />Pytorch</li>
+    <li><img src="assets/icons/flower-icon.png" alt="Flower" />Flower</li>
     <li><img src="https://cdn.simpleicons.org/apachehadoop" alt="Hadoop" />Hadoop</li>
     <li><img src="https://cdn.simpleicons.org/apachespark" alt="Spark" />Spark</li>
     <li><img src="https://cdn.simpleicons.org/apachehbase" alt="HBase" />HBase</li>
@@ -97,11 +102,8 @@
     <li><img src="https://cdn.simpleicons.org/logstash" alt="LogStash" />LogStash</li>
     <li><img src="https://cdn.simpleicons.org/kibana" alt="Kibana" />Kibana</li>
     <li><img src="https://cdn.simpleicons.org/react" alt="React" />React</li>
-    <li><img src="https://cdn.simpleicons.org/railway/0B0D0E" alt="Railway" />Railway</li>
-    <li><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" />Supabase</li>
-    <li><img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />Vercel</li>
-    <li><img src="https://cdn.simpleicons.org/box/000000" alt="Hatchet" />Hatchet</li>
-    <li><img src="https://cdn.simpleicons.org/box/000000" alt="ZenML" />ZenML</li>
+    <li><img src="https://cdn.simpleicons.org/rubyonrails" alt="Rails" />Rails</li>
+    <li><img src="/assets/icons/zenml-icon.png" alt="ZenML" />ZenML</li>
     <li style="min-width: 64px; pointer-events: none; opacity: 0;"></li>
   </ul>
   </div>
@@ -154,6 +156,7 @@
 <script src="/assets/js/counters.js"></script>
 <script src="/assets/js/contact-dialog.js"></script>
 <script src="/assets/js/the-truest-equality.js"></script>
+<script src="/assets/js/languages-hello-world.js"></script>
 </body>
 </html>
 
