@@ -6,23 +6,25 @@
   <title>{{ page.title | default: "Gabriele Matini" }}</title>
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/portfolio.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/effects.css' | relative_url }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body data-page="portfolio">
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <section class="portfolio-section">
-  <header class="portfolio-header">
+  <header class="portfolio-header" data-reveal>
     <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
     <h2><img src="/assets/icons/portfolio-icon.png" alt="Portfolio" class="section-icon" /> My Portfolio</h2>
     <p>Explore the projects and experiences that define my work in AI, Full-Stack, and Data Engineering.</p>
   </header>
 
   <!-- Clients I Helped - full width, always first -->
-  <section class="portfolio-category clients-section">
+  <section class="portfolio-category clients-section" data-reveal>
     <h3><img src="/assets/icons/ai-icon.png" alt="Clients Icon" class="category-icon" /> Clients I Helped</h3>
     <p>Companies and startups I've collaborated with to build AI solutions, ship features, and solve complex technical challenges.</p>
     <div class="clients-grid">
-      <article class="client-card">
+      <article class="client-card spotlight" data-reveal data-reveal-delay="1">
         <h4 class="client-name">
           <a href="https://sensay.io" target="_blank" rel="noopener noreferrer">Sensay.io</a>
         </h4>
@@ -30,7 +32,7 @@
           <p>Constructed and maintained their RAG system and solved complex problems including a custom PDF chunking engine. Served as customer support, shipped features fast, and improved their chatbot solution by <strong>63%</strong> by fixing their ingestion system. Part of the AI team constructing their new "Better OffBoarding", using agentic AI to interview a leaving employee to gather feedback and insights on their experience, creating a digital replica of the worker to answer questions on their role.</p>
         </div>
       </article>
-      <article class="client-card">
+      <article class="client-card spotlight" data-reveal data-reveal-delay="2">
         <h4 class="client-name">
           <a href="https://xnovo.ai" target="_blank" rel="noopener noreferrer">xNovo AI</a>
         </h4>
@@ -44,11 +46,11 @@
   <!-- Project categories - below clients -->
   <div class="portfolio-categories">
     <!-- AI & ML Projects -->
-    <section class="portfolio-category">
+    <section class="portfolio-category" data-reveal>
       <h3><img src="/assets/icons/ai-icon.png" alt="AI & ML Icon" class="category-icon" /> AI & ML</h3>
       <p>Models, experiments, and intelligent systems built for tasks like classification, generation, and optimization.</p>
       <ul class="project-list">
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/SirAlex01/Computer-Vision-Project-Maiola-Matini" target="_blank" class="project-title">AI Architecture for Video Frames Prediction</a>
             <span class="arrow">▸</span>
@@ -57,7 +59,7 @@
             Predicting future video frames to enhance and interpolate low-frame-rate video streams. The task involved using LSTM architectures with squeeze-and-excitation modules to enhance performances.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/SirAlex01/LALB-DM-Project" target="_blank" class="project-title">Mycenaean Linear B Translator & Infiller</a>
             <span class="arrow">▸</span>
@@ -66,7 +68,7 @@
             First automatic translator and restorer for ancient Greek Linear B texts using multiple smaller models. Final translation is done by asking Gemini LLM to pick best reconstruction among options.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/kev187038/ClientSelectionWIthRademacherComplexity" target="_blank" class="project-title">Federated Learning Client Selection for heterogeneous data</a>
             <span class="arrow">▸</span>
@@ -75,7 +77,7 @@
             Research project on optimizing client selection in Federated Learning using Weighted Local Rademacher Complexity and other statistical learning tools.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/kev187038/SpaceInvadersEnvironment-for-RLAgents" target="_blank" class="project-title">Reinforcement Learning</a>
             <span class="arrow">▸</span>
@@ -88,11 +90,11 @@
     </section>
 
     <!-- Full-Stack & DevOps Projects -->
-    <section class="portfolio-category">
+    <section class="portfolio-category" data-reveal>
       <h3><img src="/assets/icons/full-stack-development-icon.png" alt="Full-Stack & DevOps Icon" class="category-icon" /> Full-Stack Development & DevOps</h3>
       <p>Web apps, APIs, cloud integrations, and deployment pipelines using modern tools and frameworks.</p>
       <ul class="project-list">
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/EmaMule/ProjectMuseek" target="_blank" class="project-title">Museek - Share your passion</a>
             <span class="arrow">▸</span>
@@ -101,7 +103,7 @@
             Blogging website about music built in PHP. Features include comments, likes, trending posts, and user ranking.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/alessandrosaccone/discover_rails" target="_blank" class="project-title">Discover – Tourism Web App</a>
             <span class="arrow">▸</span>
@@ -110,7 +112,7 @@
             Ruby on Rails tourism platform with messaging, maps, Stripe integration, ratings, and personalized accounts.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/kev187038/EMOFY" target="_blank" class="project-title">EMOFY Microservice Deployment</a>
             <span class="arrow">▸</span>
@@ -119,7 +121,7 @@
             Microservice-based AI feedback system with login, database, inference API, ELK stack, and monitoring tools.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://kev187038.github.io" target="_blank" class="project-title">Portfolio Website</a>
             <span class="arrow">▸</span>
@@ -132,11 +134,11 @@
     </section>
 
     <!-- Data Engineering Projects -->
-    <section class="portfolio-category">
+    <section class="portfolio-category" data-reveal>
       <h3><img src="assets/icons/data-engineering-icon.png" alt="Data Engineering Icon" class="category-icon" /> Data Engineering</h3>
       <p>Data pipelines, transformation jobs, and analytics projects focused on performance and scalability.</p>
       <ul class="project-list">
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/SirAlex01/Large-Scale-Data-Management-Project" target="_blank" class="project-title">HBase Distributed Database Setup</a>
             <span class="arrow">▸</span>
@@ -145,7 +147,7 @@
             Setup of a 3-node HBase cluster for distributed big data querying. Included a tutorial and benchmarking.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/SirAlex01/LSDM-IIS" target="_blank" class="project-title">Information Integration ETL Pipeline</a>
             <span class="arrow">▸</span>
@@ -154,7 +156,7 @@
             Built an ETL pipeline using Pentaho to reconcile highly heterogeneous datasets from multiple sources.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/kev187038/Data-Management-Project" target="_blank" class="project-title">Neo4J vs PostGreSQL Analysis</a>
             <span class="arrow">▸</span>
@@ -163,7 +165,7 @@
             Performance and use-case comparison between Graph and Relational DBs using analytical queries.
           </div>
         </li>
-        <li class="project-item">
+        <li class="project-item spotlight tilt-card" data-reveal>
           <div class="project-header" onclick="toggleDescription(this)">
             <a href="https://github.com/kev187038/DataMining" target="_blank" class="project-title">Spark Search Engine</a>
             <span class="arrow">▸</span>
@@ -185,9 +187,9 @@
 <footer class="site-footer" style="padding: 2rem; background: #222; color: white; text-align: center; margin-top: 4rem;">
   <p>Let's connect! Contact me at:</p>
   <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" style="color: #0e76a8; margin-right: 1rem; text-decoration:none;">LinkedIn</a> | 
-    <a href="https://github.com/kev187038" style="color: #ffff; margin-left: 1rem; text-decoration:none;">GitHub</a> |
-    <a href="mailto:gabriele.matini@gmail.com" style="color: #ea4335; margin-left: 1rem; text-decoration:none; position: relative; padding-left: 28px;">
+    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow" style="color: #0e76a8; margin-right: 1rem; text-decoration:none;">LinkedIn</a> |
+    <a href="https://github.com/kev187038" class="underline-grow" style="color: #ffff; margin-left: 1rem; text-decoration:none;">GitHub</a> |
+    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow" style="color: #ea4335; margin-left: 1rem; text-decoration:none; position: relative; padding-left: 28px;">
     Email
     <span style="
       content: '';
@@ -206,6 +208,7 @@
 </footer>
 
 <script src="assets/js/portfolio.js"></script>
+<script src="{{ '/assets/js/effects.js' | relative_url }}" defer></script>
 </body>
 </html>
 

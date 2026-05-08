@@ -6,11 +6,12 @@
   <title>{{ page.title | default: "Terms and Conditions" }} | Gabriele Matini</title>
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/legal.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/effects.css' | relative_url }}">
 </head>
-<body class="legal-document-body">
+<body class="legal-document-body" data-page="legal">
 
 <section class="legal-document-section">
-  <article class="legal-document-content">
+  <article class="legal-document-content" data-reveal>
     {{ content }}
   </article>
 </section>
@@ -18,11 +19,12 @@
 <footer class="site-footer legal-site-footer">
   <p>Let's connect! Contact me at:</p>
   <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256">LinkedIn</a> |
-    <a href="https://github.com/kev187038">GitHub</a> |
-    <a href="mailto:gabriele.matini@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow">LinkedIn</a> |
+    <a href="https://github.com/kev187038" class="underline-grow">GitHub</a> |
+    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow">Email</a>
   </p>
 </footer>
 
+<script src="{{ '/assets/js/effects.js' | relative_url }}" defer></script>
 </body>
 </html>

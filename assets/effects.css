@@ -1,0 +1,248 @@
+/* Global interactive effects shared across every layout.
+   Loaded after each page's per-page CSS so it can layer on top. */
+
+:root {
+  --accent-blue: #007aff;
+  --accent-cyan: #5ac8fa;
+  --accent-teal: #7dd3c0;
+  --accent-glow: rgba(0, 122, 255, 0.35);
+  --accent-cyan-soft: rgba(90, 200, 250, 0.18);
+  --tilt-max: 6deg;
+  --reveal-y: 16px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Scroll reveal -------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--reveal-y));
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+[data-reveal][data-reveal-delay="1"] { transition-delay: 0.08s; }
+[data-reveal][data-reveal-delay="2"] { transition-delay: 0.16s; }
+[data-reveal][data-reveal-delay="3"] { transition-delay: 0.24s; }
+[data-reveal][data-reveal-delay="4"] { transition-delay: 0.32s; }
+[data-reveal][data-reveal-delay="5"] { transition-delay: 0.40s; }
+
+/* ---- Cursor-following spotlight ------------------------------------- */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    var(--spot-size, 220px) circle at var(--mx, 50%) var(--my, 50%),
+    var(--accent-cyan-soft),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: inherit;
+  z-index: 0;
+}
+.spotlight:hover::before { opacity: 1; }
+.spotlight > * { position: relative; z-index: 1; }
+
+/* Hero override — much larger glow that follows the cursor across the header */
+.main-header.spotlight {
+  --spot-size: 520px;
+}
+.main-header.spotlight::before {
+  background: radial-gradient(
+    var(--spot-size) circle at var(--mx, 50%) var(--my, 50%),
+    rgba(90, 200, 250, 0.22),
+    rgba(0, 122, 255, 0.08) 30%,
+    transparent 60%
+  );
+  border-radius: 0;
+}
+
+/* ---- 3D tilt on cards ---------------------------------------------- */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.35s var(--ease-out);
+  will-change: transform;
+}
+
+/* ---- Magnetic buttons ---------------------------------------------- */
+.magnetic {
+  transition: transform 0.18s var(--ease-out);
+}
+
+/* ---- Animated gradient text ---------------------------------------- */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--accent-blue),
+    var(--accent-cyan),
+    var(--accent-teal),
+    var(--accent-cyan),
+    var(--accent-blue)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gx-pan 8s linear infinite;
+}
+@keyframes gx-pan {
+  to { background-position: 300% 0; }
+}
+
+/* ---- Available-for-work pill --------------------------------------- */
+.available-pill {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(52, 199, 89, 0.45);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  user-select: none;
+  z-index: 5;
+}
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34c759;
+  box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.6);
+  animation: pulse-dot 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.65); }
+  70% { box-shadow: 0 0 0 10px rgba(52, 199, 89, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); }
+}
+
+/* ---- Scroll progress bar ------------------------------------------- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--scroll, 0%);
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-teal));
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 12px rgba(90, 200, 250, 0.45);
+}
+
+/* ---- Animated underline -------------------------------------------- */
+.underline-grow {
+  position: relative;
+  display: inline-block;
+}
+.underline-grow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+  border-radius: 2px;
+}
+.underline-grow:hover::after,
+.underline-grow:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ---- Tooltip on tech icons (CSS-only, uses [data-tip]) ------------- */
+[data-tip] {
+  position: relative;
+}
+[data-tip]::after,
+[data-tip]::before {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  left: 50%;
+  z-index: 50;
+}
+[data-tip]::after {
+  content: attr(data-tip);
+  bottom: calc(100% + 10px);
+  background: #1c1c1e;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+[data-tip]::before {
+  content: "";
+  bottom: calc(100% + 4px);
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #1c1c1e;
+}
+[data-tip]:hover::after,
+[data-tip]:hover::before,
+[data-tip]:focus-visible::after,
+[data-tip]:focus-visible::before {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---- Counter glow while animating ---------------------------------- */
+.counter-number.is-counting {
+  text-shadow: 0 0 24px var(--accent-glow);
+}
+
+/* ---- Reduced motion / touch gates ---------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .gradient-text,
+  .spotlight::before,
+  .tilt-card,
+  .magnetic,
+  .pulse-dot,
+  #scroll-progress {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  [data-reveal] { transform: none !important; }
+  .gradient-text {
+    background: var(--accent-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+@media (hover: none) {
+  .spotlight::before { display: none; }
+  .tilt-card { transform: none !important; }
+  .magnetic { transform: none !important; }
+}

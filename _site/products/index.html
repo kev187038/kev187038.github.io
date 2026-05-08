@@ -5,25 +5,27 @@
   <title>Products | Gabriele Matini</title>
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/products.css">
+  <link rel="stylesheet" href="/assets/effects.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="products-page">
+<body class="products-page" data-page="products">
+<div id="scroll-progress" aria-hidden="true"></div>
 
-<header class="products-header">
+<header class="products-header" data-reveal>
   <button type="button" class="back-button" onclick="window.location.href='/'">← Back to Home</button>
   <h1>Products</h1>
   <p>Software you can run on your own machine. Clear pricing and terms before you buy.</p>
 </header>
 
 <main class="products-grid">
-  <article class="product-card">
+  <article class="product-card spotlight tilt-card" data-reveal>
     <div class="product-card-visual">
       <img src="/assets/product-icons/GrassHopper.jpeg" alt="GrassHopper product" width="280" height="280" />
     </div>
     <div class="product-card-body">
       <div class="product-card-head">
         <h2>GrassHopper</h2>
-        <p class="product-price">$24.99</p>
+        <p class="product-price">$19.99</p>
       </div>
       <p class="product-description">
         An agentic AI pipeline built to streamline job search and applications. It automatically matches and ranks job posts against your background so you can focus on the best-fit opportunities.
@@ -39,11 +41,12 @@
 <footer class="products-footer">
   <p>Let's connect! Contact me at:</p>
   <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256">LinkedIn</a>
-    <a href="https://github.com/kev187038">GitHub</a>
-    <a href="mailto:gabriele.matini@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow">LinkedIn</a>
+    <a href="https://github.com/kev187038" class="underline-grow">GitHub</a>
+    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow">Email</a>
   </p>
 </footer>
 
+<script src="/assets/js/effects.js" defer></script>
 </body>
 </html>

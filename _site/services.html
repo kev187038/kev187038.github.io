@@ -5,23 +5,25 @@
   <title>Gabriele Matini</title>
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/services.css">
+  <link rel="stylesheet" href="/assets/effects.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body data-page="services">
+<div id="scroll-progress" aria-hidden="true"></div>
 
 
-<section class="services-header">
+<section class="services-header" data-reveal>
   <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
   <h1>🚀 My Services</h1>
   <p>
-    I provide end-to-end consulting for Artificial Intelligence, Web & App Development, and DevOps & Infrastructure. 
+    I provide end-to-end consulting for Artificial Intelligence, Web & App Development, and DevOps & Infrastructure.
     Discover how I can help bring your ideas to life with cutting-edge technologies and tailored solutions.
   </p>
 </section>
 
 
 <section class="services-cards">
-  <div class="service-card">
+  <div class="service-card spotlight tilt-card" data-reveal data-reveal-delay="1">
     <img src="/assets/icons/ai-service.jpeg" alt="AI & ML" class="service-icon" />
     <h2>AI & Machine Learning</h2>
     <p>
@@ -29,7 +31,7 @@
     </p>
   </div>
 
-  <div class="service-card">
+  <div class="service-card spotlight tilt-card" data-reveal data-reveal-delay="2">
     <img src="/assets/icons/web-dev-service.jpeg" alt="Web & App Development" class="service-icon" />
     <h2>Website & Application Development</h2>
     <p>
@@ -37,7 +39,7 @@
     </p>
   </div>
 
-  <div class="service-card">
+  <div class="service-card spotlight tilt-card" data-reveal data-reveal-delay="3">
     <img src="/assets/icons/data-service.jpeg" alt="Data & Infrastructure" class="service-icon" />
     <h2>Data & Infrastructure</h2>
     <p>
@@ -53,9 +55,9 @@
 <footer class="site-footer" style="padding: 2rem; background: #222; color: white; text-align: center; margin-top: 4rem;">
   <p>Let's connect! Contact me at:</p>
   <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" style="color: #0e76a8; margin-right: 1rem; text-decoration:none;">LinkedIn</a> | 
-    <a href="https://github.com/kev187038" style="color: #fff; margin-left: 1rem; text-decoration:none;">GitHub</a> |
-    <a href="mailto:gabriele.matini@gmail.com" style="color: #ea4335; margin-left: 1rem; text-decoration:none; position: relative; padding-left: 28px;">
+    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow" style="color: #0e76a8; margin-right: 1rem; text-decoration:none;">LinkedIn</a> |
+    <a href="https://github.com/kev187038" class="underline-grow" style="color: #fff; margin-left: 1rem; text-decoration:none;">GitHub</a> |
+    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow" style="color: #ea4335; margin-left: 1rem; text-decoration:none; position: relative; padding-left: 28px;">
     Email
     <span style="
       content: '';
@@ -73,6 +75,6 @@
   </p>
 </footer>
 
-
+<script src="/assets/js/effects.js" defer></script>
 </body>
 </html>

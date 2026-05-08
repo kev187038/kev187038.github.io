@@ -1,25 +1,114 @@
 ---
 permalink: /404.html
-layout: page
+layout: null
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>404 — Not Found | Gabriele Matini</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/home.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/effects.css' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(180deg, #000 0%, #1c1c1e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+    }
+    .nf-panel {
+      width: min(38rem, 100%);
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 24px 64px rgba(0, 0, 0, 0.55),
+        0 0 80px rgba(90, 200, 250, 0.15);
+    }
+    .nf-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.85rem;
+      background: linear-gradient(180deg, #3a3a3c 0%, #2c2c2e 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+    }
+    .nf-dots { display: flex; gap: 6px; }
+    .nf-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .nf-dot.r { background: #ff5f57; }
+    .nf-dot.y { background: #febc2e; }
+    .nf-dot.g { background: #28c840; }
+    .nf-title { font-size: 0.72rem; color: #98989d; letter-spacing: 0.02em; }
+    .nf-body {
+      background: #0d1117;
+      padding: 1.25rem 1.25rem 1.5rem;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .nf-line { color: #c9d1d9; margin: 0.15rem 0; white-space: pre-wrap; }
+    .nf-prompt { color: #79c0ff; }
+    .nf-error { color: #ff7b72; }
+    .nf-success { color: #7ee787; font-weight: 600; }
+    .nf-list { padding-left: 1.5rem; margin: 0.35rem 0; list-style: none; }
+    .nf-list li { padding: 0.1rem 0; }
+    .nf-list a {
+      color: #5ac8fa;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .nf-list a:hover { color: #7dd3c0; text-decoration: underline; }
+    .nf-cursor {
+      display: inline-block;
+      width: 0.55em;
+      height: 1em;
+      vertical-align: text-bottom;
+      background: #5ac8fa;
+      animation: nf-blink 1s steps(1) infinite;
+    }
+    @keyframes nf-blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="nf-panel" role="dialog" aria-label="404 not found terminal">
+  <div class="nf-titlebar">
+    <div class="nf-dots">
+      <span class="nf-dot r"></span>
+      <span class="nf-dot y"></span>
+      <span class="nf-dot g"></span>
+    </div>
+    <span class="nf-title">404 — bash</span>
+  </div>
+  <div class="nf-body">
+    <p class="nf-line nf-prompt">> cd <span id="nf-path">/requested/page</span></p>
+    <p class="nf-line nf-error">bash: cd: <span id="nf-path-2">/requested/page</span>: No such file or directory</p>
+    <p class="nf-line nf-prompt">> ls /</p>
+    <ul class="nf-list">
+      <li><a href="{{ '/' | relative_url }}">home/</a></li>
+      <li><a href="{{ '/portfolio' | relative_url }}">portfolio/</a></li>
+      <li><a href="{{ '/services' | relative_url }}">services/</a></li>
+      <li><a href="{{ '/products' | relative_url }}">products/</a></li>
+    </ul>
+    <p class="nf-line nf-success">tip: pick one above to get unstuck.</p>
+    <p class="nf-line nf-prompt">> <span class="nf-cursor"></span></p>
+  </div>
 </div>
+
+<script>
+  // Fill in the requested path (best-effort).
+  (function () {
+    try {
+      var p = location.pathname || "/requested/page";
+      document.getElementById("nf-path").textContent = p;
+      document.getElementById("nf-path-2").textContent = p;
+    } catch (_) {}
+  })();
+</script>
+</body>
+</html>
