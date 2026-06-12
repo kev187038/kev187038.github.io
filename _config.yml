@@ -19,19 +19,24 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Gabriele Matini
-email: gabriele.matini18@gmail.com
+email: xperimentdev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hello there! I'm Gabriele Matini, a Software and ML engineer with a passion for solving complex tasks and Full-Stack development. Let's connect!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  kev187038
-linkedin_username: gabrielematini
+linkedin_username: gabriele-matini
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+# The nested kev187038.github.io/ is a separate clone used as a style source —
+# never let Jekyll process it.
+exclude:
+  - kev187038.github.io/
 
 # Exclude from processing.
 # The following items will not be processed, by default.

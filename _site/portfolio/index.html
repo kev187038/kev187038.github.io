@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hello there! I&#39;m Gabriele Matini, a Software and ML engineer with a passion for solving complex tasks and Full-Stack development. Let&#39;s connect!" />
+  <title>Portfolio | Gabriele Matini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var storedTheme = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var useDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          colors: {
+            brand: {
+              50: "#ecfeff",
+              100: "#cffafe",
+              200: "#a5f3fc",
+              300: "#67e8f9",
+              400: "#22d3ee",
+              500: "#06b6d4",
+              600: "#0891b2",
+              700: "#0e7490",
+              800: "#155e75",
+              900: "#164e63"
+            }
+          },
+          boxShadow: {
+            glow: "0 30px 60px -24px rgba(8, 145, 178, 0.45)"
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/effects.css">
+  <link rel="stylesheet" href="/assets/quirks.css">
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100" data-page="">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+    <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.14),_transparent_28%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(56,189,248,0.12),_transparent_28%)]"></div>
+    <div class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(to_bottom,rgba(15,23,42,0.03),transparent_35%,rgba(15,23,42,0.03))] dark:bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_35%,rgba(255,255,255,0.01))]"></div>
+
+    <header class="sticky top-0 z-40 border-b border-slate-900/10 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+  <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3 text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold text-white shadow-lg shadow-slate-900/20 dark:bg-white dark:text-slate-900">GM</span>
+      <span class="flex flex-col">
+        <span>Gabriele Matini</span>
+        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">ML Engineer · Full-stack builder</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex">
+      <a href="/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Home</a>
+      <a href="/about/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">About</a>
+      <a href="/portfolio/" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">Portfolio</a>
+      <a href="/services/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Services</a>
+      <a href="/products/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Products</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button type="button" data-theme-toggle class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span data-theme-icon aria-hidden="true">☾</span>
+        <span data-theme-label>Dark</span>
+      </button>
+
+      <button type="button" data-mobile-menu-button aria-controls="mobile-menu" aria-expanded="false" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-900/10 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 md:hidden dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span class="sr-only">Open navigation</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" data-mobile-menu class="hidden border-t border-slate-900/10 px-4 pb-4 dark:border-white/10 md:hidden">
+    <div class="flex flex-col gap-2 pt-4">
+      <a href="/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Home</a>
+      <a href="/about/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">About</a>
+      <a href="/portfolio/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">Portfolio</a>
+      <a href="/services/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Services</a>
+      <a href="/products/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Products</a>
+    </div>
+  </nav>
+</header>
+
+
+    <main class="flex-1">
+      <section class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div class="max-w-3xl">
+    <span class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-200">Portfolio</span>
+    <h1 class="mt-5 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">My Portfolio</h1>
+    <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">Explore the projects and experiences that define my work in AI, Full-Stack, and Data Engineering.</p>
+  </div>
+
+  <!-- Clients I Helped -->
+  <section class="mt-12" data-reveal>
+    <div class="mb-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Clients I Helped</p>
+      <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Companies and startups I've collaborated with</h2>
+      <p class="mt-2 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">Companies and startups I've collaborated with to build AI solutions, ship features, and solve complex technical challenges.</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="spotlight rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20">
+        <h3 class="text-xl font-semibold text-slate-950 dark:text-white">
+          <a href="https://sensay.io" target="_blank" rel="noopener noreferrer" class="transition hover:text-brand-600 dark:hover:text-brand-300">Sensay.io</a>
+        </h3>
+        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">Constructed and maintained their RAG system and solved complex problems including a custom PDF chunking engine. Served as customer support, shipped features fast, and improved their chatbot solution by <strong class="font-semibold text-slate-900 dark:text-white">63%</strong> by fixing their ingestion system. Part of the AI team constructing their new "Better OffBoarding", using agentic AI to interview a leaving employee to gather feedback and insights on their experience, creating a digital replica of the worker to answer questions on their role.</p>
+      </article>
+
+      <article class="spotlight rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20">
+        <h3 class="text-xl font-semibold text-slate-950 dark:text-white">
+          <a href="https://xnovo.ai" target="_blank" rel="noopener noreferrer" class="transition hover:text-brand-600 dark:hover:text-brand-300">xNovo AI</a>
+        </h3>
+        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">Built <strong class="font-semibold text-slate-900 dark:text-white">Vantiq</strong>, an SEO automation Agentic AI tool tailored to their needs: fetching SEO data on a brand, processing it into clusters of product categories of interest, generating AI insights on trends and actionable recommendations, plus AI-powered seasonality forecasts and market predictions. Among the coolest features, there is semantic expansion, that way the user can understand how AI models expand the brand's name when it is inputted.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Project categories -->
+  <section class="mt-16 grid gap-6 xl:grid-cols-3">
+    <!-- AI & ML -->
+    <article class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20" data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">AI &amp; ML</p>
+      <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Models and intelligent systems</h2>
+      <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">Models, experiments, and intelligent systems built for tasks like classification, generation, and optimization.</p>
+      <ul class="mt-6 space-y-3 list-none p-0">
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/SirAlex01/Computer-Vision-Project-Maiola-Matini" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">AI Architecture for Video Frames Prediction</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Predicting future video frames to enhance and interpolate low-frame-rate video streams. The task involved using LSTM architectures with squeeze-and-excitation modules to enhance performances.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/SirAlex01/LALB-DM-Project" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Mycenaean Linear B Translator &amp; Infiller</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">First automatic translator and restorer for ancient Greek Linear B texts using multiple smaller models. Final translation is done by asking Gemini LLM to pick best reconstruction among options.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/kev187038/ClientSelectionWIthRademacherComplexity" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Federated Learning Client Selection for heterogeneous data</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Research project on optimizing client selection in Federated Learning using Weighted Local Rademacher Complexity and other statistical learning tools.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/kev187038/SpaceInvadersEnvironment-for-RLAgents" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Reinforcement Learning</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Implemented Q-Learning, DQN, and DoubleDQN in Atari environments for comparison of performance and sample efficiency.</div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Full-Stack Development & DevOps -->
+    <article class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20" data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Full-Stack Development &amp; DevOps</p>
+      <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Products, APIs, and delivery systems</h2>
+      <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">Web apps, APIs, cloud integrations, and deployment pipelines using modern tools and frameworks.</p>
+      <ul class="mt-6 space-y-3 list-none p-0">
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/EmaMule/ProjectMuseek" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Museek - Share your passion</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Blogging website about music built in PHP. Features include comments, likes, trending posts, and user ranking.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/alessandrosaccone/discover_rails" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Discover – Tourism Web App</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Ruby on Rails tourism platform with messaging, maps, Stripe integration, ratings, and personalized accounts.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/kev187038/EMOFY" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">EMOFY Microservice Deployment</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Microservice-based AI feedback system with login, database, inference API, ELK stack, and monitoring tools.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://kev187038.github.io" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Portfolio Website</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">This personal portfolio built with Jekyll, HTML/CSS, and fully responsive Apple-style UI.</div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Data Engineering -->
+    <article class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20" data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Data Engineering</p>
+      <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Pipelines, stores, and analytics</h2>
+      <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">Data pipelines, transformation jobs, and analytics projects focused on performance and scalability.</p>
+      <ul class="mt-6 space-y-3 list-none p-0">
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/SirAlex01/Large-Scale-Data-Management-Project" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">HBase Distributed Database Setup</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Setup of a 3-node HBase cluster for distributed big data querying. Included a tutorial and benchmarking.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/SirAlex01/LSDM-IIS" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Information Integration ETL Pipeline</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Built an ETL pipeline using Pentaho to reconcile highly heterogeneous datasets from multiple sources.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/kev187038/Data-Management-Project" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Neo4J vs PostGreSQL Analysis</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Performance and use-case comparison between Graph and Relational DBs using analytical queries.</div>
+        </li>
+        <li class="project-item rounded-[1.5rem] border border-slate-900/10 px-5 py-4 transition hover:border-brand-300 dark:border-white/10 dark:hover:border-brand-400/40">
+          <div class="project-header flex items-center justify-between gap-3" onclick="toggleDescription(this)">
+            <a href="https://github.com/kev187038/DataMining" target="_blank" rel="noopener noreferrer" class="project-title font-semibold text-slate-950 dark:text-white">Spark Search Engine</a>
+            <span class="arrow text-brand-600 dark:text-brand-300">▸</span>
+          </div>
+          <div class="project-description text-sm leading-7 text-slate-600 dark:text-slate-300">Mini search engine for Amazon product listings built using PySpark with tf-idf scoring.</div>
+        </li>
+      </ul>
+    </article>
+  </section>
+</section>
+
+<script src="/assets/js/portfolio.js"></script>
+
+    </main>
+
+    <footer class="border-t border-slate-900/10 bg-white/70 py-12 dark:border-white/10 dark:bg-slate-950/60">
+  <div class="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-6 rounded-[2rem] border border-slate-900/10 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:from-slate-900 dark:to-slate-950 lg:flex-row lg:items-center lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Available for select projects</p>
+        <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Need an engineer who can ship AI, product, and infrastructure without the hand-waving?</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-300 sm:text-base">I help teams turn rough ideas into production-ready systems with clear tradeoffs, fast iteration, and durable delivery.</p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="mailto:xperimentdev@gmail.com" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-cyan-100">Email me</a>
+        <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; <span data-current-year>2026</span> Gabriele Matini. Built with Jekyll and Tailwind.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="https://github.com/kev187038" rel="noopener noreferrer" target="_blank" class="transition hover:text-slate-900 dark:hover:text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="transition hover:text-slate-900 dark:hover:text-white">LinkedIn</a>
+        <a href="mailto:xperimentdev@gmail.com" class="transition hover:text-slate-900 dark:hover:text-white">xperimentdev@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+  <script src="/assets/js/effects.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

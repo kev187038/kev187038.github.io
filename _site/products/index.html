@@ -1,52 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hello there! I&#39;m Gabriele Matini, a Software and ML engineer with a passion for solving complex tasks and Full-Stack development. Let&#39;s connect!" />
   <title>Products | Gabriele Matini</title>
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="/assets/products.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var storedTheme = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var useDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          colors: {
+            brand: {
+              50: "#ecfeff",
+              100: "#cffafe",
+              200: "#a5f3fc",
+              300: "#67e8f9",
+              400: "#22d3ee",
+              500: "#06b6d4",
+              600: "#0891b2",
+              700: "#0e7490",
+              800: "#155e75",
+              900: "#164e63"
+            }
+          },
+          boxShadow: {
+            glow: "0 30px 60px -24px rgba(8, 145, 178, 0.45)"
+          }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="/assets/effects.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/quirks.css">
 </head>
-<body class="products-page" data-page="products">
-<div id="scroll-progress" aria-hidden="true"></div>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100" data-page="">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+    <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.14),_transparent_28%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(56,189,248,0.12),_transparent_28%)]"></div>
+    <div class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(to_bottom,rgba(15,23,42,0.03),transparent_35%,rgba(15,23,42,0.03))] dark:bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_35%,rgba(255,255,255,0.01))]"></div>
 
-<header class="products-header" data-reveal>
-  <button type="button" class="back-button" onclick="window.location.href='/'">← Back to Home</button>
-  <h1>Products</h1>
-  <p>Software you can run on your own machine. Clear pricing and terms before you buy.</p>
+    <header class="sticky top-0 z-40 border-b border-slate-900/10 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+  <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3 text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold text-white shadow-lg shadow-slate-900/20 dark:bg-white dark:text-slate-900">GM</span>
+      <span class="flex flex-col">
+        <span>Gabriele Matini</span>
+        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">ML Engineer · Full-stack builder</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex">
+      <a href="/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Home</a>
+      <a href="/about/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">About</a>
+      <a href="/portfolio/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Portfolio</a>
+      <a href="/services/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Services</a>
+      <a href="/products/" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">Products</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button type="button" data-theme-toggle class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span data-theme-icon aria-hidden="true">☾</span>
+        <span data-theme-label>Dark</span>
+      </button>
+
+      <button type="button" data-mobile-menu-button aria-controls="mobile-menu" aria-expanded="false" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-900/10 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 md:hidden dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span class="sr-only">Open navigation</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" data-mobile-menu class="hidden border-t border-slate-900/10 px-4 pb-4 dark:border-white/10 md:hidden">
+    <div class="flex flex-col gap-2 pt-4">
+      <a href="/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Home</a>
+      <a href="/about/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">About</a>
+      <a href="/portfolio/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Portfolio</a>
+      <a href="/services/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Services</a>
+      <a href="/products/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">Products</a>
+    </div>
+  </nav>
 </header>
 
-<main class="products-grid">
-  <article class="product-card spotlight tilt-card" data-reveal>
-    <div class="product-card-visual">
-      <img src="/assets/product-icons/GrassHopper.jpeg" alt="GrassHopper product" width="280" height="280" />
-    </div>
-    <div class="product-card-body">
-      <div class="product-card-head">
-        <h2>GrassHopper</h2>
-        <p class="product-price">$19.99</p>
-      </div>
-      <p class="product-description">
-        An agentic AI pipeline built to streamline job search and applications. It automatically matches and ranks job posts against your background so you can focus on the best-fit opportunities.
-      </p>
-      <div class="product-actions">
-        <a class="product-btn-primary" href="https://gabidev.gumroad.com/l/grasshopper" rel="noopener noreferrer" target="_blank">Buy on Gumroad</a>
-        <a class="product-btn-secondary" href="/GrassHopper-terms-and-conditions/">Terms of service</a>
-      </div>
-    </div>
-  </article>
-</main>
 
-<footer class="products-footer">
-  <p>Let's connect! Contact me at:</p>
-  <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow">LinkedIn</a>
-    <a href="https://github.com/kev187038" class="underline-grow">GitHub</a>
-    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow">Email</a>
-  </p>
+    <main class="flex-1">
+      <section class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div class="max-w-3xl">
+    <span class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-200">Products</span>
+    <h1 class="mt-5 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">Products</h1>
+    <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">Software you can run on your own machine. Clear pricing and terms before you buy.</p>
+  </div>
+
+  <section class="mt-12" data-reveal>
+    <article class="spotlight grid gap-8 rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20 lg:grid-cols-[minmax(18rem,22rem)_minmax(0,1fr)] lg:p-10">
+      <div class="rounded-[1.75rem] bg-gradient-to-br from-brand-100 via-white to-slate-100 p-6 dark:from-brand-500/10 dark:via-slate-900 dark:to-slate-800">
+        <img src="/assets/product-icons/GrassHopper.jpeg" alt="GrassHopper product" class="mx-auto h-full max-h-72 w-full rounded-[1.25rem] object-cover shadow-xl shadow-slate-900/10">
+      </div>
+
+      <div class="flex flex-col justify-center">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Featured product</p>
+            <h2 class="mt-2 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">GrassHopper</h2>
+          </div>
+          <div class="rounded-[1.25rem] bg-slate-900 px-4 py-3 text-center text-white shadow-lg shadow-slate-900/20 dark:bg-white dark:text-slate-900">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em]">Price</p>
+            <p class="mt-1 text-2xl font-semibold">$19.99</p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300">An agentic AI pipeline built to streamline job search and applications. It automatically matches and ranks job posts against your background so you can focus on the best-fit opportunities.</p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200" href="https://gabidev.gumroad.com/l/grasshopper" rel="noopener noreferrer" target="_blank">Buy on Gumroad</a>
+          <a class="inline-flex items-center justify-center rounded-full border border-slate-900/10 bg-white/70 px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:bg-slate-800" href="/GrassHopper-terms-and-conditions/">Terms of service</a>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>
+
+    </main>
+
+    <footer class="border-t border-slate-900/10 bg-white/70 py-12 dark:border-white/10 dark:bg-slate-950/60">
+  <div class="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-6 rounded-[2rem] border border-slate-900/10 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:from-slate-900 dark:to-slate-950 lg:flex-row lg:items-center lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Available for select projects</p>
+        <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Need an engineer who can ship AI, product, and infrastructure without the hand-waving?</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-300 sm:text-base">I help teams turn rough ideas into production-ready systems with clear tradeoffs, fast iteration, and durable delivery.</p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="mailto:xperimentdev@gmail.com" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-cyan-100">Email me</a>
+        <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; <span data-current-year>2026</span> Gabriele Matini. Built with Jekyll and Tailwind.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="https://github.com/kev187038" rel="noopener noreferrer" target="_blank" class="transition hover:text-slate-900 dark:hover:text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="transition hover:text-slate-900 dark:hover:text-white">LinkedIn</a>
+        <a href="mailto:xperimentdev@gmail.com" class="transition hover:text-slate-900 dark:hover:text-white">xperimentdev@gmail.com</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<script src="/assets/js/effects.js" defer></script>
+  </div>
+
+  <script src="/assets/js/effects.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

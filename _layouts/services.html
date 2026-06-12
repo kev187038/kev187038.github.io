@@ -1,80 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>{{ page.title | default: "Gabriele Matini" }}</title>
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/services.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/effects.css' | relative_url }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body data-page="services">
-<div id="scroll-progress" aria-hidden="true"></div>
+---
+layout: base
+---
+<section class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div class="max-w-3xl">
+    <span class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-200">Services</span>
+    <h1 class="mt-5 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">Engineering support for teams that want useful outcomes, not vague innovation theater.</h1>
+    <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">I work across AI, product engineering, and infrastructure to help ideas move from rough concept to dependable system.</p>
+  </div>
 
+  <section class="mt-12 grid gap-6 xl:grid-cols-3">
+    <article class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20">
+      <div class="flex items-center gap-4">
+        <img src="{{ '/assets/icons/ai-service.jpeg' | relative_url }}" alt="AI and ML service" class="h-16 w-16 rounded-2xl object-cover ring-1 ring-slate-900/10 dark:ring-white/10">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">AI &amp; ML</p>
+          <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Applied intelligence</h2>
+        </div>
+      </div>
+      <p class="mt-6 text-sm leading-7 text-slate-600 dark:text-slate-300">Custom ML systems, retrieval pipelines, agent workflows, experimentation, and productization for teams that need AI to be useful in practice.</p>
+      <ul class="mt-6 space-y-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">RAG, search, chunking, and evaluation pipelines</li>
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">LLM-assisted workflows and agentic automation</li>
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">NLP, computer vision, recommendation, and experimentation support</li>
+      </ul>
+    </article>
 
-<section class="services-header" data-reveal>
-  <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
-  <h1>🚀 My Services</h1>
-  <p>
-    I provide end-to-end consulting for Artificial Intelligence, Web & App Development, and DevOps & Infrastructure.
-    Discover how I can help bring your ideas to life with cutting-edge technologies and tailored solutions.
-  </p>
+    <article class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20">
+      <div class="flex items-center gap-4">
+        <img src="{{ '/assets/icons/web-dev-service.jpeg' | relative_url }}" alt="Web and app development service" class="h-16 w-16 rounded-2xl object-cover ring-1 ring-slate-900/10 dark:ring-white/10">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Product engineering</p>
+          <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Web and application delivery</h2>
+        </div>
+      </div>
+      <p class="mt-6 text-sm leading-7 text-slate-600 dark:text-slate-300">Modern interfaces, backend services, integrations, and deployment-ready product work with an emphasis on fast iteration and clean UX.</p>
+      <ul class="mt-6 space-y-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">Responsive web apps and internal tools</li>
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">API design, backend services, and third-party integrations</li>
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">Polish, performance, and product-facing reliability work</li>
+      </ul>
+    </article>
+
+    <article class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20">
+      <div class="flex items-center gap-4">
+        <img src="{{ '/assets/icons/data-service.jpeg' | relative_url }}" alt="Data and infrastructure service" class="h-16 w-16 rounded-2xl object-cover ring-1 ring-slate-900/10 dark:ring-white/10">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Infrastructure</p>
+          <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Data and platform foundations</h2>
+        </div>
+      </div>
+      <p class="mt-6 text-sm leading-7 text-slate-600 dark:text-slate-300">The systems underneath the product: storage, ETL, cloud deployment, CI/CD, observability, and automation.</p>
+      <ul class="mt-6 space-y-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">ETL and data transformation workflows</li>
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">Containerized deployments and cloud environment setup</li>
+        <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">Monitoring, automation, and operational hardening</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="mt-16 rounded-[2rem] border border-slate-900/10 bg-slate-900 p-8 text-white shadow-xl shadow-slate-900/10 dark:border-white/10 lg:p-10">
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Working style</p>
+    <h2 class="mt-3 text-3xl font-semibold tracking-tight">How engagements usually run</h2>
+    <div class="mt-8 grid gap-5 md:grid-cols-3">
+      <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+        <p class="text-sm font-semibold text-white">Discovery</p>
+        <p class="mt-2 text-sm leading-7 text-slate-300">Align on goals, technical risks, constraints, and the fastest useful milestone.</p>
+      </div>
+      <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+        <p class="text-sm font-semibold text-white">Execution</p>
+        <p class="mt-2 text-sm leading-7 text-slate-300">Build working software quickly with enough structure that it does not collapse under the next iteration.</p>
+      </div>
+      <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+        <p class="text-sm font-semibold text-white">Stabilization</p>
+        <p class="mt-2 text-sm leading-7 text-slate-300">Strengthen testing, deployment, observability, and the handoff path for the team.</p>
+      </div>
+    </div>
+  </section>
 </section>
-
-
-<section class="services-cards">
-  <div class="service-card spotlight tilt-card" data-reveal data-reveal-delay="1">
-    <img src="/assets/icons/ai-service.jpeg" alt="AI & ML" class="service-icon" />
-    <h2>AI & Machine Learning</h2>
-    <p>
-      Custom ML models, NLP systems, computer vision, recommendation engines, and AI strategy. From prototyping to production-grade pipelines.
-    </p>
-  </div>
-
-  <div class="service-card spotlight tilt-card" data-reveal data-reveal-delay="2">
-    <img src="/assets/icons/web-dev-service.jpeg" alt="Web & App Development" class="service-icon" />
-    <h2>Website & Application Development</h2>
-    <p>
-      Modern web and mobile applications built with responsive design, robust backends, APIs, and seamless user experiences.
-    </p>
-  </div>
-
-  <div class="service-card spotlight tilt-card" data-reveal data-reveal-delay="3">
-    <img src="/assets/icons/data-service.jpeg" alt="Data & Infrastructure" class="service-icon" />
-    <h2>Data & Infrastructure</h2>
-    <p>
-      Data engineering for transformation, Machine Learning, ETL procedures, and Data Mining purposes.
-      Scalable cloud infrastructures, CI/CD pipelines, containerization, monitoring, and automation to keep your systems reliable and efficient.
-    </p>
-  </div>
-</section>
-
-
-
-
-<footer class="site-footer" style="padding: 2rem; background: #222; color: white; text-align: center; margin-top: 4rem;">
-  <p>Let's connect! Contact me at:</p>
-  <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow" style="color: #0e76a8; margin-right: 1rem; text-decoration:none;">LinkedIn</a> |
-    <a href="https://github.com/kev187038" class="underline-grow" style="color: #fff; margin-left: 1rem; text-decoration:none;">GitHub</a> |
-    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow" style="color: #ea4335; margin-left: 1rem; text-decoration:none; position: relative; padding-left: 28px;">
-    Email
-    <span style="
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      background: url('data:image/svg+xml;utf8,<svg fill=\'%23ea4335\' xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\'><path d=\'M12 13.065L0 6.438V18c0 1.103.897 2 2 2h20c1.103 0 2-.897 2-2V6.438l-12 6.627zM12 11L24 4H0l12 7z\'/></svg>') no-repeat center;
-      background-size: contain;
-      display: inline-block;
-    "></span>
-  </a>
-  </p>
-</footer>
-
-<script src="{{ '/assets/js/effects.js' | relative_url }}" defer></script>
-</body>
-</html>

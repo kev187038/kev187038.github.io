@@ -1,0 +1,43 @@
+<header class="sticky top-0 z-40 border-b border-slate-900/10 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+  <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="{{ '/' | relative_url }}" class="flex items-center gap-3 text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold text-white shadow-lg shadow-slate-900/20 dark:bg-white dark:text-slate-900">GM</span>
+      <span class="flex flex-col">
+        <span>{{ site.title }}</span>
+        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">ML Engineer · Full-stack builder</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex">
+      <a href="{{ '/' | relative_url }}" class="rounded-full px-4 py-2 text-sm font-medium transition {% if page.url == '/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white{% endif %}">Home</a>
+      <a href="{{ '/about/' | relative_url }}" class="rounded-full px-4 py-2 text-sm font-medium transition {% if page.url == '/about/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white{% endif %}">About</a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="rounded-full px-4 py-2 text-sm font-medium transition {% if page.url == '/portfolio/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white{% endif %}">Portfolio</a>
+      <a href="{{ '/services/' | relative_url }}" class="rounded-full px-4 py-2 text-sm font-medium transition {% if page.url == '/services/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white{% endif %}">Services</a>
+      <a href="{{ '/products/' | relative_url }}" class="rounded-full px-4 py-2 text-sm font-medium transition {% if page.url == '/products/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white{% endif %}">Products</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button type="button" data-theme-toggle class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span data-theme-icon aria-hidden="true">☾</span>
+        <span data-theme-label>Dark</span>
+      </button>
+
+      <button type="button" data-mobile-menu-button aria-controls="mobile-menu" aria-expanded="false" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-900/10 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 md:hidden dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span class="sr-only">Open navigation</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" data-mobile-menu class="hidden border-t border-slate-900/10 px-4 pb-4 dark:border-white/10 md:hidden">
+    <div class="flex flex-col gap-2 pt-4">
+      <a href="{{ '/' | relative_url }}" class="rounded-2xl px-4 py-3 text-sm font-medium transition {% if page.url == '/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200{% endif %}">Home</a>
+      <a href="{{ '/about/' | relative_url }}" class="rounded-2xl px-4 py-3 text-sm font-medium transition {% if page.url == '/about/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200{% endif %}">About</a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="rounded-2xl px-4 py-3 text-sm font-medium transition {% if page.url == '/portfolio/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200{% endif %}">Portfolio</a>
+      <a href="{{ '/services/' | relative_url }}" class="rounded-2xl px-4 py-3 text-sm font-medium transition {% if page.url == '/services/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200{% endif %}">Services</a>
+      <a href="{{ '/products/' | relative_url }}" class="rounded-2xl px-4 py-3 text-sm font-medium transition {% if page.url == '/products/' %}bg-slate-900 text-white dark:bg-white dark:text-slate-900{% else %}bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200{% endif %}">Products</a>
+    </div>
+  </nav>
+</header>

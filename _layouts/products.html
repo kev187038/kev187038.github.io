@@ -1,52 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>{{ page.title | default: "Products" }} | Gabriele Matini</title>
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/products.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/effects.css' | relative_url }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body class="products-page" data-page="products">
-<div id="scroll-progress" aria-hidden="true"></div>
+---
+layout: base
+---
+<section class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div class="max-w-3xl">
+    <span class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-200">Products</span>
+    <h1 class="mt-5 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">Products</h1>
+    <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">Software you can run on your own machine. Clear pricing and terms before you buy.</p>
+  </div>
 
-<header class="products-header" data-reveal>
-  <button type="button" class="back-button" onclick="window.location.href='{{ '/' | relative_url }}'">← Back to Home</button>
-  <h1>Products</h1>
-  <p>Software you can run on your own machine. Clear pricing and terms before you buy.</p>
-</header>
-
-<main class="products-grid">
-  <article class="product-card spotlight tilt-card" data-reveal>
-    <div class="product-card-visual">
-      <img src="{{ '/assets/product-icons/GrassHopper.jpeg' | relative_url }}" alt="GrassHopper product" width="280" height="280" />
-    </div>
-    <div class="product-card-body">
-      <div class="product-card-head">
-        <h2>GrassHopper</h2>
-        <p class="product-price">$19.99</p>
+  <section class="mt-12" data-reveal>
+    <article class="spotlight grid gap-8 rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20 lg:grid-cols-[minmax(18rem,22rem)_minmax(0,1fr)] lg:p-10">
+      <div class="rounded-[1.75rem] bg-gradient-to-br from-brand-100 via-white to-slate-100 p-6 dark:from-brand-500/10 dark:via-slate-900 dark:to-slate-800">
+        <img src="{{ '/assets/product-icons/GrassHopper.jpeg' | relative_url }}" alt="GrassHopper product" class="mx-auto h-full max-h-72 w-full rounded-[1.25rem] object-cover shadow-xl shadow-slate-900/10">
       </div>
-      <p class="product-description">
-        An agentic AI pipeline built to streamline job search and applications. It automatically matches and ranks job posts against your background so you can focus on the best-fit opportunities.
-      </p>
-      <div class="product-actions">
-        <a class="product-btn-primary" href="https://gabidev.gumroad.com/l/grasshopper" rel="noopener noreferrer" target="_blank">Buy on Gumroad</a>
-        <a class="product-btn-secondary" href="{{ '/GrassHopper-terms-and-conditions/' | relative_url }}">Terms of service</a>
+
+      <div class="flex flex-col justify-center">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300">Featured product</p>
+            <h2 class="mt-2 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">GrassHopper</h2>
+          </div>
+          <div class="rounded-[1.25rem] bg-slate-900 px-4 py-3 text-center text-white shadow-lg shadow-slate-900/20 dark:bg-white dark:text-slate-900">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em]">Price</p>
+            <p class="mt-1 text-2xl font-semibold">$19.99</p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300">An agentic AI pipeline built to streamline job search and applications. It automatically matches and ranks job posts against your background so you can focus on the best-fit opportunities.</p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200" href="https://gabidev.gumroad.com/l/grasshopper" rel="noopener noreferrer" target="_blank">Buy on Gumroad</a>
+          <a class="inline-flex items-center justify-center rounded-full border border-slate-900/10 bg-white/70 px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:bg-slate-800" href="{{ '/GrassHopper-terms-and-conditions/' | relative_url }}">Terms of service</a>
+        </div>
       </div>
-    </div>
-  </article>
-</main>
-
-<footer class="products-footer">
-  <p>Let's connect! Contact me at:</p>
-  <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow">LinkedIn</a>
-    <a href="https://github.com/kev187038" class="underline-grow">GitHub</a>
-    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow">Email</a>
-  </p>
-</footer>
-
-<script src="{{ '/assets/js/effects.js' | relative_url }}" defer></script>
-</body>
-</html>
+    </article>
+  </section>
+</section>

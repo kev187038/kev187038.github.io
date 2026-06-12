@@ -1,199 +1,184 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <title>About</title>
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="/assets/home.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ML and full-stack engineer focused on shipping production-grade AI, web, and data systems, fast, and built to last." />
+  <title>About | Gabriele Matini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var storedTheme = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var useDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          colors: {
+            brand: {
+              50: "#ecfeff",
+              100: "#cffafe",
+              200: "#a5f3fc",
+              300: "#67e8f9",
+              400: "#22d3ee",
+              500: "#06b6d4",
+              600: "#0891b2",
+              700: "#0e7490",
+              800: "#155e75",
+              900: "#164e63"
+            }
+          },
+          boxShadow: {
+            glow: "0 30px 60px -24px rgba(8, 145, 178, 0.45)"
+          }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="/assets/effects.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/quirks.css">
 </head>
-<body data-page="home">
-<div id="scroll-progress" aria-hidden="true"></div>
-<header class="main-header spotlight" style="text-align: center;">
-  <span class="available-pill" aria-label="Available for new projects">
-    <span class="pulse-dot" aria-hidden="true"></span>Available for work
-  </span>
-  <h1 id="the-truest-equality">Gabriele Matini === <span class="gradient-text">Build Robust, Ship Fast!</span> &#x1F60E;</h1>
-  <p>
-    Hello and welcome to my website! I'm Gabriele, an ML Engineer with a passion for solving complex tasks and deploying rapid solutions! I offer my services, prioritizing quality and speed of delivery over everything!
-  </p>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100" data-page="">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+    <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.14),_transparent_28%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(56,189,248,0.12),_transparent_28%)]"></div>
+    <div class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(to_bottom,rgba(15,23,42,0.03),transparent_35%,rgba(15,23,42,0.03))] dark:bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_35%,rgba(255,255,255,0.01))]"></div>
 
-<section class="contact-cta-section" data-reveal>
-  <button type="button" class="get-in-touch-btn magnetic" id="contact-open-btn" aria-haspopup="dialog">Get in Touch</button>
-</section>
-  
-  <section class="counter-section" data-reveal>
-  <div class="counter-box">
-    <span id="experience-counter" class="counter-number">0</span>
-    <span class="counter-label">Years of Experience</span>
-  </div>
-<a href="https://github.com/kev187038" class="counter-link" target="_blank" rel="noopener noreferrer">
-  <div class="counter-box">
-    <span id="repo-count" class="counter-number">0</span>
-    <span class="counter-label">Projects</span>
-  </div>
-</a>
-</section>
+    <header class="sticky top-0 z-40 border-b border-slate-900/10 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+  <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3 text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold text-white shadow-lg shadow-slate-900/20 dark:bg-white dark:text-slate-900">GM</span>
+      <span class="flex flex-col">
+        <span>Gabriele Matini</span>
+        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">ML Engineer · Full-stack builder</span>
+      </span>
+    </a>
 
-  <div class="passions" data-reveal style="margin-top: 1.5rem;">
-    <h3 style="margin-bottom: 0.5rem;">My Passions ❤️</h3>
-    <ul class="passions-list" style="display: inline-flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; justify-content: center; flex-wrap: wrap;">
-      <li style="font-size: 1.5rem; display: flex; flex-direction: column; align-items: center;">🥞<span style="font-size: 0.9rem; margin-top: 0.3rem;">Making Pancakes</span></li>
-      <li style="font-size: 1.5rem; display: flex; flex-direction: column; align-items: center;">🍸<span style="font-size: 0.9rem; margin-top: 0.3rem;">Tasting Liquors</span></li>
-      <li style="font-size: 1.5rem; display: flex; flex-direction: column; align-items: center;">🏊‍♂️<span style="font-size: 0.9rem; margin-top: 0.3rem;">Swimming</span></li>
-      <li style="font-size: 1.5rem; display: flex; flex-direction: column; align-items: center;">🐕‍🦺<span style="font-size: 0.9rem; margin-top: 0.3rem;">Training My Dog</span></li>
-    </ul>
+    <nav class="hidden items-center gap-1 md:flex">
+      <a href="/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Home</a>
+      <a href="/about/" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">About</a>
+      <a href="/portfolio/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Portfolio</a>
+      <a href="/services/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Services</a>
+      <a href="/products/" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">Products</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button type="button" data-theme-toggle class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span data-theme-icon aria-hidden="true">☾</span>
+        <span data-theme-label>Dark</span>
+      </button>
+
+      <button type="button" data-mobile-menu-button aria-controls="mobile-menu" aria-expanded="false" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-900/10 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 md:hidden dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+        <span class="sr-only">Open navigation</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
   </div>
+
+  <nav id="mobile-menu" data-mobile-menu class="hidden border-t border-slate-900/10 px-4 pb-4 dark:border-white/10 md:hidden">
+    <div class="flex flex-col gap-2 pt-4">
+      <a href="/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Home</a>
+      <a href="/about/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">About</a>
+      <a href="/portfolio/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Portfolio</a>
+      <a href="/services/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Services</a>
+      <a href="/products/" class="rounded-2xl px-4 py-3 text-sm font-medium transition bg-slate-900/5 text-slate-700 dark:bg-white/5 dark:text-slate-200">Products</a>
+    </div>
+  </nav>
 </header>
 
-<main class="main-content" id="main-content">
-<section class="buttons-section" data-reveal>
-  <a href="/portfolio" class="portfolio spotlight tilt-card magnetic" data-reveal data-reveal-delay="1">Portfolio</a>
-  <a href="/services" class="services spotlight tilt-card magnetic" data-reveal data-reveal-delay="2">Services</a>
-  <a href="/products" class="products spotlight tilt-card magnetic" data-reveal data-reveal-delay="3">Products</a>
-</section>
 
-<section class="languages" data-reveal>
-  <h2>Languages I Code In</h2>
-  <div class="scroll-wrapper">
-  <ul class="language-list">
-    <li onclick="JavaHelloWorld(this)" data-tip="Click for hello-world"><img src="assets/icons/java-icon.png" alt="Java Icon">Java</li>
-    <li onclick="PythonHelloWorld(this)" data-tip="Click for hello-world"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python Icon">Python</li>
-    <li onclick="CHelloWorld(this)" data-tip="Click for hello-world"><img src="https://cdn.simpleicons.org/c/00599C" alt="C Icon">C/C++</li>
-    <li onclick="RubyHelloWorld(this)" data-tip="Click for hello-world"><img src="https://cdn.simpleicons.org/ruby/CC342D" alt="Ruby Icon">Ruby</li>
-    <li onclick="AssemblyHelloWorld(this)" data-tip="Click for hello-world"><img src="https://cdn.simpleicons.org/assemblyscript/808080" alt="Assembly Icon">Assembly</li>
-    <li onclick="JavaScriptHelloWorld(this)" data-tip="Click for hello-world"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Icon">JavaScript</li>
-    <li onclick="TypeScriptHelloWorld(this)" data-tip="Click for hello-world"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript Icon">TypeScript</li>
-  </ul>
+    <main class="flex-1">
+      <section class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div class="grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(18rem,0.75fr)] lg:items-start">
+    <div class="rounded-[2rem] border border-slate-900/10 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/20 sm:p-10">
+      <span class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-200">About</span>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">About</h1>
+      <p class="mt-4 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">ML and full-stack engineer focused on shipping production-grade AI, web, and data systems, fast, and built to last.</p>
+
+      <article class="prose prose-slate mt-10 max-w-none prose-headings:tracking-tight prose-a:text-brand-700 prose-a:no-underline hover:prose-a:text-brand-600 prose-strong:text-slate-950 dark:prose-invert dark:prose-strong:text-white dark:prose-a:text-brand-300 dark:hover:prose-a:text-brand-200">
+        <p>I’m <strong>Gabriele Matini</strong>, a Machine Learning and full-stack engineer. I like turning hard, ambiguous problems into systems that actually ship, with a bias toward <strong>building robust and shipping fast</strong>. Whether it’s an AI feature, a web product, or the data and infrastructure underneath, I care about the same thing: software that holds up after launch, not just in a demo.</p>
+
+<p>Most of my work lives at the intersection of AI and product engineering. I built and maintained the <strong>RAG and ingestion systems at Sensay.io</strong>, including a custom PDF chunking engine, and shipped features and support across their AI stack. For <strong>xNovo AI</strong> I created <strong>Vantiq</strong>, an agentic SEO-automation tool that clusters brand data, generates AI insights and seasonality forecasts, and performs semantic brand expansion. I also build and sell my own software, like <strong>GrassHopper</strong>, an agentic pipeline that streamlines job search and applications.</p>
+
+<p>My day-to-day spans models and agentic workflows, web products and APIs, and the data and cloud foundations that keep everything reliable as complexity grows. I studied at <strong>Sapienza University of Rome</strong><!-- TODO: confirm with Gabriele, Sapienza affiliation inferred from assets/icons/sapienza-icon.png; correct the university/program if wrong -->, and I’m comfortable moving across the whole stack, from research-grade ML to deployment, observability, and DevOps. When I’m away from the keyboard you’ll usually find me making pancakes, swimming, or training my dog.</p>
+
+<p>If you’re working on something ambitious and want an engineer who can frame the real problem, ship a useful version quickly, and then harden what matters, let’s connect.</p>
+
+      </article>
+    </div>
+
+    <aside class="space-y-6">
+      <div class="rounded-[2rem] border border-slate-900/10 bg-white/75 p-6 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-900/60 dark:shadow-black/20">
+        <h2 class="text-lg font-semibold text-slate-950 dark:text-white">Core focus</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+          <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">AI &amp; ML — production AI features, agentic workflows, and retrieval systems</li>
+          <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">Web &amp; App development — full-stack product work from API design to polished UI</li>
+          <li class="rounded-2xl bg-slate-900/5 px-4 py-3 dark:bg-white/5">Data &amp; Infrastructure — foundations that keep systems fast and reliable</li>
+        </ul>
+      </div>
+
+      <div class="rounded-[2rem] border border-slate-900/10 bg-slate-900 p-6 text-white shadow-xl shadow-slate-900/10 dark:border-white/10">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Direct contact</p>
+        <p class="mt-3 text-sm leading-7 text-slate-300">If you need help shipping a product, validating an AI idea, or untangling a delivery bottleneck, reach out directly.</p>
+        <div class="mt-5 flex flex-col gap-3">
+          <a href="mailto:xperimentdev@gmail.com" class="inline-flex items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-cyan-100">Email</a>
+          <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center rounded-full border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">LinkedIn</a>
+          <a href="https://github.com/kev187038" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center rounded-full border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">GitHub</a>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
+    </main>
 
-<section class="technologies-section" data-reveal>
-  <h2>Technologies I Use</h2>
-  <div class="scroll-wrapper">
-  <ul class="technology-list">
-    <li data-tip="Cloud deploys"><img src="https://cdn.simpleicons.org/railway/0B0D0E" alt="Railway" />Railway</li>
-    <li data-tip="React framework"><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js"> Next.js</li>
-    <li data-tip="Java backends"><img src="https://cdn.simpleicons.org/springboot" alt="SpringBoot" />SpringBoot</li>
-    <li data-tip="Python APIs"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" />FastAPI</li>
-    <li data-tip="Postgres + auth"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" />Supabase</li>
-    <li data-tip="Edge hosting"><img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />Vercel</li>
-    <li data-tip="Python ORM"><img src="https://cdn.simpleicons.org/sqlalchemy/D71F00" alt="SQLAlchemy" />SQLAlchemy</li>
-    <li data-tip="Schema validation"><img src="https://cdn.simpleicons.org/pydantic/E92063" alt="Pydantic" />Pydantic</li>
-    <li data-tip="Background jobs"><img src="https://img.icons8.com/ios-filled/50/hatchet.png" alt="Hatchet" />Hatchet</li>
-    <li data-tip="Message queue"><img src="https://cdn.simpleicons.org/rabbitmq" alt="RabbitMQ" />RabbitMQ</li>
-    <li data-tip="Java build"><img src="https://cdn.simpleicons.org/apachemaven" alt="Maven" />Maven</li>
-    <li data-tip="Version control"><img src="https://cdn.simpleicons.org/git" alt="Git" />Git</li>
-    <li data-tip="CI/CD"><img src="https://cdn.simpleicons.org/jenkins" alt="Jenkins" />Jenkins</li>
-    <li data-tip="Containers"><img src="https://cdn.simpleicons.org/docker" alt="Docker" />Docker</li>
-    <li data-tip="Orchestration"><img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes" />Kubernetes</li>
-    <li data-tip="Deep learning"><img src="https://cdn.simpleicons.org/pytorch" alt="Pytorch" />Pytorch</li>
-    <li data-tip="Federated learning"><img src="assets/icons/flower-icon.png" alt="Flower" />Flower</li>
-    <li data-tip="Big data"><img src="https://cdn.simpleicons.org/apachehadoop" alt="Hadoop" />Hadoop</li>
-    <li data-tip="Distributed compute"><img src="https://cdn.simpleicons.org/apachespark" alt="Spark" />Spark</li>
-    <li data-tip="Wide-column store"><img src="https://cdn.simpleicons.org/apachehbase" alt="HBase" />HBase</li>
-    <li data-tip="Relational DB"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" />PostgreSQL</li>
-    <li data-tip="Data analysis"><img src="https://cdn.simpleicons.org/pandas" alt="Pandas" />Pandas</li>
-    <li data-tip="Embedded DB"><img src="https://cdn.simpleicons.org/sqlite" alt="SQLite" />SQLite</li>
-    <li data-tip="Relational DB"><img src="https://cdn.simpleicons.org/mysql" alt="MySQL" />MySQL</li>
-    <li data-tip="Graph DB"><img src="https://cdn.simpleicons.org/neo4j" alt="Neo4J" />Neo4J</li>
-    <li data-tip="Document DB"><img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" />MongoDB</li>
-    <li data-tip="Daily driver"><img src="https://cdn.simpleicons.org/linux" alt="Linux/UNIX" />Linux/UNIX</li>
-    <li data-tip="Server distro"><img src="https://cdn.simpleicons.org/ubuntu" alt="Ubuntu" />Ubuntu</li>
-    <li data-tip="Search engine"><img src="https://cdn.simpleicons.org/elasticsearch" alt="ElasticSearch" />ElasticSearch</li>
-    <li data-tip="Log pipeline"><img src="https://cdn.simpleicons.org/logstash" alt="LogStash" />LogStash</li>
-    <li data-tip="Log dashboards"><img src="https://cdn.simpleicons.org/kibana" alt="Kibana" />Kibana</li>
-    <li data-tip="UI library"><img src="https://cdn.simpleicons.org/react" alt="React" />React</li>
-    <li data-tip="Ruby framework"><img src="https://cdn.simpleicons.org/rubyonrails" alt="Rails" />Rails</li>
-    <li data-tip="MLOps pipelines"><img src="/assets/icons/zenml-icon.png" alt="ZenML" />ZenML</li>
-    <li style="min-width: 64px; pointer-events: none; opacity: 0;"></li>
-  </ul>
+    <footer class="border-t border-slate-900/10 bg-white/70 py-12 dark:border-white/10 dark:bg-slate-950/60">
+  <div class="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-6 rounded-[2rem] border border-slate-900/10 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:from-slate-900 dark:to-slate-950 lg:flex-row lg:items-center lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Available for select projects</p>
+        <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Need an engineer who can ship AI, product, and infrastructure without the hand-waving?</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-300 sm:text-base">I help teams turn rough ideas into production-ready systems with clear tradeoffs, fast iteration, and durable delivery.</p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="mailto:xperimentdev@gmail.com" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-cyan-100">Email me</a>
+        <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; <span data-current-year>2026</span> Gabriele Matini. Built with Jekyll and Tailwind.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="https://github.com/kev187038" rel="noopener noreferrer" target="_blank" class="transition hover:text-slate-900 dark:hover:text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabriele-matini/" rel="noopener noreferrer" target="_blank" class="transition hover:text-slate-900 dark:hover:text-white">LinkedIn</a>
+        <a href="mailto:xperimentdev@gmail.com" class="transition hover:text-slate-900 dark:hover:text-white">xperimentdev@gmail.com</a>
+      </div>
+    </div>
   </div>
-</section>
-
-<section class="testimonials-section" data-reveal>
-  <h2>What clients say</h2>
-  <div class="testimonials-grid">
-    <article class="testimonial-card spotlight tilt-card" data-reveal data-reveal-delay="1">
-      <blockquote class="testimonial-quote">You have a winning mindset, everytime you leave no stone unturned to find a solution. It's reassuring to know that I can just leave a problem in your hands and it will be dealt with.</blockquote>
-      <footer class="testimonial-attribution">
-        <span class="testimonial-avatar testimonial-avatar--logo" aria-hidden="true">
-          <img src="/assets/icons/sensay-logo.png" alt="Sensay logo">
-        </span>
-        <span class="testimonial-meta">
-          <span class="testimonial-name">Marco Bettiolo</span>
-          <span class="testimonial-role">CTO at Sensay.io</span>
-        </span>
-      </footer>
-    </article>
-    <article class="testimonial-card spotlight tilt-card" data-reveal data-reveal-delay="2">
-      <blockquote class="testimonial-quote">Vantiq turned out very good. We are pleased with the clustering engine Gabriele created for us, as well as the insight he gave us into how this technology could be better exploited.</blockquote>
-      <footer class="testimonial-attribution">
-        <span class="testimonial-avatar testimonial-avatar--logo" aria-hidden="true">
-          <img src="/assets/icons/xnovo-logo.jpg" alt="xNovo logo">
-        </span>
-        <span class="testimonial-meta">
-          <span class="testimonial-name">XNovo</span>
-          <span class="testimonial-role">Marketing tester team at XNovo.ai</span>
-        </span>
-      </footer>
-    </article>
-  </div>
-</section>
-</main>
-
-<footer class="site-footer" style="padding: 2rem; background: #222; color: white; text-align: center; margin-top: 4rem;">
-  <p>Let's connect! Contact me at:</p>
-  <p>
-    <a href="https://www.linkedin.com/in/gabriele-matini-064aa9256" class="underline-grow" style="color: #0e76a8; margin-right: 1rem; text-decoration:none;">LinkedIn</a> |
-    <a href="https://github.com/kev187038" class="underline-grow" style="color: #fff; margin-left: 1rem; text-decoration:none;">GitHub</a> |
-    <a href="mailto:gabriele.matini@gmail.com" class="underline-grow" style="color: #ea4335; margin-left: 1rem; text-decoration:none; position: relative; padding-left: 28px;">
-    Email
-    <span style="
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      background: url('data:image/svg+xml;utf8,<svg fill=\'%23ea4335\' xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\'><path d=\'M12 13.065L0 6.438V18c0 1.103.897 2 2 2h20c1.103 0 2-.897 2-2V6.438l-12 6.627zM12 11L24 4H0l12 7z\'/></svg>') no-repeat center;
-      background-size: contain;
-      display: inline-block;
-    "></span>
-  </a>
-  </p>
 </footer>
 
-<dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title">
-  <button type="button" class="contact-dialog-close" id="contact-close-btn" aria-label="Close dialog">&times;</button>
-  <form method="post" action="https://formsubmit.co/xperimentdev@gmail.com" class="contact-form">
-    <h2 id="contact-dialog-title">Get in Touch</h2>
-    <p class="contact-dialog-lead">Send a message and I will reply by email.</p>
-    <label for="contact-email">Your email</label>
-    <input id="contact-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
-    <label for="contact-subject">Subject</label>
-    <input id="contact-subject" type="text" name="_subject" required autocomplete="off" placeholder="What is this about?" />
-    <label for="contact-message">Message</label>
-    <textarea id="contact-message" name="message" rows="5" required placeholder="Your message…"></textarea>
-    <input type="hidden" name="_next" value="http://localhost:4000/" />
-    <input type="hidden" name="_captcha" value="false" />
-    <div class="contact-form-actions">
-      <button type="button" class="contact-btn contact-btn-secondary" id="contact-cancel-btn">Cancel</button>
-      <button type="submit" class="contact-btn contact-btn-primary">Send</button>
-    </div>
-  </form>
-</dialog>
+  </div>
 
-<script src="/assets/js/counters.js"></script>
-<script src="/assets/js/contact-dialog.js"></script>
-<script src="/assets/js/the-truest-equality.js"></script>
-<script src="/assets/js/languages-hello-world.js"></script>
-<script src="/assets/js/effects.js" defer></script>
-<script src="/assets/js/easter-eggs.js" defer></script>
+  <script src="/assets/js/effects.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
-
