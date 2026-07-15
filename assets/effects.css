@@ -52,7 +52,7 @@
 .spotlight:hover::before { opacity: 1; }
 .spotlight > * { position: relative; z-index: 1; }
 
-/* Hero override — much larger glow that follows the cursor across the header */
+/* Hero override, much larger glow that follows the cursor across the header */
 .main-header.spotlight {
   --spot-size: 520px;
 }

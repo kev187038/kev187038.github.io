@@ -1,10 +1,10 @@
 ---
 layout: legal-document
-title: GrassHopper — Terms and Conditions
+title: GrassHopper, Terms and Conditions
 permalink: /GrassHopper-terms-and-conditions/
 ---
 
-# GrassHopper — Terms and Conditions
+# GrassHopper, Terms and Conditions
 
 <p class="legal-updated"><strong>Last updated:</strong> March 29, 2026</p>
 

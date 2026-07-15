@@ -843,7 +843,7 @@ header.main-header { position: relative; }
   animation: gx-pan 8s linear infinite;
 }
 
-/* Subtle dot grid behind the hero — sits below the spotlight glow. */
+/* Subtle dot grid behind the hero, sits below the spotlight glow. */
 header.main-header {
   background-image:
     radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
@@ -851,7 +851,7 @@ header.main-header {
   background-size: 24px 24px, 100% 100%;
 }
 
-/* Tooltips inside horizontal scrollers would clip vertically — disable. */
+/* Tooltips inside horizontal scrollers would clip vertically, disable. */
 .scroll-wrapper [data-tip]::after,
 .scroll-wrapper [data-tip]::before {
   display: none;

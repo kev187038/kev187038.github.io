@@ -63,7 +63,7 @@
 
     var title = document.createElement("span");
     title.className = "equality-terminal-title";
-    title.textContent = "strict-equality — bash";
+    title.textContent = "strict-equality, bash";
 
     var closeBtn = document.createElement("button");
     closeBtn.type = "button";

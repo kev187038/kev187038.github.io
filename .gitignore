@@ -1,0 +1,7 @@
+# Local Bundler gem install (system gem path is not writable here)
+/.bundle/
+/vendor/
+
+# Jekyll caches (the built _site/ IS committed intentionally, see CLAUDE.md)
+/.jekyll-cache/
+/.jekyll-metadata

@@ -6,7 +6,7 @@
   /* ---- Console signature ------------------------------------------ */
   try {
     console.log(
-      "%c👋 Found me. Let's build something. — gabriele.matini@gmail.com",
+      "%c👋 Found me. Let's build something., gabriele.matini@gmail.com",
       "font:14px ui-monospace,SF Mono,monospace;color:#5ac8fa;padding:6px 0;"
     );
     console.log(
@@ -67,7 +67,7 @@
         '<span class="equality-terminal-dot equality-terminal-dot-yellow"></span>' +
         '<span class="equality-terminal-dot equality-terminal-dot-green"></span>' +
       '</div>' +
-      '<span class="equality-terminal-title">konami — bash</span>';
+      '<span class="equality-terminal-title">konami, bash</span>';
 
     var closeBtn = document.createElement("button");
     closeBtn.type = "button";
@@ -144,7 +144,7 @@
         appendLine(logEl, "available: matrix, whoami, hire, clear, exit");
       } else if (cmd === "whoami") {
         appendLine(logEl, "> whoami", "equality-terminal-prompt");
-        appendLine(logEl, "gabriele — software & ML engineer", "equality-terminal-bool");
+        appendLine(logEl, "gabriele, software & ML engineer", "equality-terminal-bool");
       } else if (cmd === "hire") {
         appendLine(logEl, "> hire", "equality-terminal-prompt");
         appendLine(logEl, "✓ gabriele.matini@gmail.com", "equality-terminal-success");

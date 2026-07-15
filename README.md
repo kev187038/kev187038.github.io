@@ -1,6 +1,6 @@
 # kev187038.github.io
 
-Gabriele Matini's personal website — a static [Jekyll](https://jekyllrb.com/) site styled with [Tailwind CSS](https://tailwindcss.com/) (loaded via CDN), with a dark/light theme toggle and a set of interactive easter eggs. Deployed to GitHub Pages.
+Gabriele Matini's personal website, a static [Jekyll](https://jekyllrb.com/) site styled with [Tailwind CSS](https://tailwindcss.com/) (loaded via CDN), with a dark/light theme toggle and a set of interactive easter eggs. Deployed to GitHub Pages.
 
 ## Run it locally
 
@@ -16,7 +16,7 @@ bundle exec jekyll serve
 
 Then open <http://localhost:4000/>.
 
-`jekyll serve` watches the source files and rebuilds automatically on save — just refresh the browser. Stop the server with `Ctrl-C`.
+`jekyll serve` watches the source files and rebuilds automatically on save, just refresh the browser. Stop the server with `Ctrl-C`.
 
 Useful variants:
 
@@ -35,7 +35,7 @@ _layouts/        Page templates (base.html is the shared shell; default.html is 
 _includes/       Shared nav + footer partials
 _config.yml      Site settings (title, social usernames, email, exclude list)
 assets/css       Hand-written CSS: effects.css (animations) + quirks.css (terminal/modal styling)
-assets/js        Vanilla JS — theme toggle, contact dialog, and the easter eggs
+assets/js        Vanilla JS, theme toggle, contact dialog, and the easter eggs
 *.markdown       Thin page stubs that select a layout (index, about, portfolio, services, products, legal)
 _site/           Generated output (see note below)
 ```
@@ -51,6 +51,6 @@ The visual style comes from Tailwind utility classes written directly in the lay
 
 ## Note: `_site/` is committed
 
-Unlike a typical Jekyll project, the built output in `_site/` is checked into git and is what GitHub Pages serves. **Edit the source files only** (`_layouts/`, `assets/`, `*.markdown`, `_config.yml`) — never hand-edit `_site/`. `jekyll serve`/`build` regenerates it; commit the regenerated `_site/` along with your source changes so the deployed site stays in sync.
+Unlike a typical Jekyll project, the built output in `_site/` is checked into git and is what GitHub Pages serves. **Edit the source files only** (`_layouts/`, `assets/`, `*.markdown`, `_config.yml`), never hand-edit `_site/`. `jekyll serve`/`build` regenerates it; commit the regenerated `_site/` along with your source changes so the deployed site stays in sync.
 
 > A separate clone may live in a nested `kev187038.github.io/` directory; it is excluded from the build via `_config.yml` and is not part of this site.

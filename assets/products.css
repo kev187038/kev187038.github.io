@@ -62,7 +62,7 @@
   align-items: stretch;
 }
 
-/* Image left, copy right; height follows content — no extra stretch */
+/* Image left, copy right; height follows content, no extra stretch */
 @media (min-width: 640px) {
   .product-card {
     flex-direction: row;

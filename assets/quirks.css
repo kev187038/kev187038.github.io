@@ -1,4 +1,4 @@
-/* quirks.css — styling the JS "quirks" depend on, salvaged from the old
+/* quirks.css, styling the JS "quirks" depend on, salvaged from the old
    per-page CSS so they survive the Tailwind redesign. These are fixed-position
    overlays / terminals / modals that read fine over either light or dark page
    themes (the terminals are intentionally always dark, macOS-style). */

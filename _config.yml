@@ -19,21 +19,35 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Gabriele Matini
+author: Gabriele Matini
 email: xperimentdev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hello there! I'm Gabriele Matini, a Software and ML engineer with a passion for solving complex tasks and Full-Stack development. Let's connect!
+  Gabriele Matini, Machine Learning and full-stack engineer building AI agents, RAG
+  and retrieval systems, and production ML. I built Sensay's RAG pipeline and Vantiq,
+  an agentic SEO tool. Let's connect!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
+# Production URL (the live GitHub Pages domain). Local `jekyll serve` still works because
+# assets are loaded via `relative_url`; only canonical/feed/absolute URLs use this.
+url: "https://kev187038.github.io"
 twitter_username: ""
 github_username:  kev187038
 linkedin_username: gabriele-matini
+
+# Used by jekyll-seo-tag for JSON-LD `sameAs` (entity consistency across profiles).
+social:
+  name: Gabriele Matini
+  links:
+    - https://www.linkedin.com/in/gabriele-matini/
+    - https://github.com/kev187038
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# The nested kev187038.github.io/ is a separate clone used as a style source —
+# The nested kev187038.github.io/ is a separate clone used as a style source,
 # never let Jekyll process it.
 exclude:
   - kev187038.github.io/

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec *)",
+      "Bash(bundle install *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(xargs -0 sed -i 's/ — /, /g')",
+      "Bash(echo \"remaining: $?\")",
+      "Bash(echo \"site em-dashes exit: $?\")",
+      "Bash(awk '$1==\"-\" || $2==\"-\"')"
+    ]
+  }
+}
