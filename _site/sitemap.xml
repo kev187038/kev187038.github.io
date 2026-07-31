@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/jekyll/update/2025/08/03/welcome-to-jekyll.html</loc>
+<loc>https://kev187038.github.io/jekyll/update/2025/08/03/welcome-to-jekyll.html</loc>
 <lastmod>2025-08-03T14:22:46+03:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/GrassHopper-terms-and-conditions/</loc>
+<loc>https://kev187038.github.io/GrassHopper-terms-and-conditions/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/about/</loc>
+<loc>https://kev187038.github.io/about/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>https://kev187038.github.io/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/portfolio/</loc>
+<loc>https://kev187038.github.io/portfolio/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/products/</loc>
+<loc>https://kev187038.github.io/products/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/services/</loc>
+<loc>https://kev187038.github.io/services/</loc>
 </url>
 </urlset>
